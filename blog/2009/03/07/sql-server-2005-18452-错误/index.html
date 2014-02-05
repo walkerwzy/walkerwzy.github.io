@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SQL Server 2005 18452 错误 - My Octopress Blog</title>
+  <meta name="author" content="walker">
+
+  
+  <meta name="description" content="决定把数据库装到自己机子上，可是非常不顺利，要选用SQL身份方式登陆，一番配置完成后，非常爽快地提示我连接不成功，一看错误代码，18452，于是又开始漫长的求解过程。。。中文网络遍地不负责任的转贴让我很不爽，以下是被转贴最多的一种方式：
+==============无法连接到服务器&nbsp;& &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://walkerwzy.github.io/blog/2009/03/07/sql-server-2005-18452-%E9%94%99%E8%AF%AF">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Germania+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<logo>
+
+<img src="/logo.png" alt="Website Logo. Upload to /source/logo.png ; disable in /source/_includes/logo.html" height="32px" width="32px">
+</logo>
+
+
+
+<body >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<br>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:walkerwzy.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<!--
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">SQL Server 2005 18452 错误</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><p>决定把数据库装到自己机子上，可是非常不顺利，要选用SQL身份方式登陆，一番配置完成后，非常爽快地提示我连接不成功，一看错误代码，18452，于是又开始漫长的求解过程。。。中文网络遍地不负责任的转贴让我很不爽，以下是被转贴最多的一种方式：</p>
+<p>==============<br />无法连接到服务器&nbsp;&nbsp; <br />服务器：消息18452，&nbsp;&nbsp;&nbsp;&nbsp; 级别16，状态1&nbsp;&nbsp; <br />[Microsoft][ODBC&nbsp;&nbsp;&nbsp;&nbsp; SQL&nbsp;&nbsp;&nbsp;&nbsp; Server&nbsp;&nbsp;&nbsp;&nbsp; Driver][SQL&nbsp;&nbsp;&nbsp;&nbsp; Server]用户‘sa’登陆失败。原因：未与信任SQL&nbsp;&nbsp;&nbsp;&nbsp; Server连接相关联&nbsp;&nbsp;&nbsp; <br />该错误产生的原因是由于SQL&nbsp;&nbsp;&nbsp;&nbsp; Server使用了&#8221;仅&nbsp;&nbsp;&nbsp;&nbsp; Windows&#8221;的身份验证方式，因此用户无法使用SQL&nbsp;&nbsp;&nbsp;&nbsp; Server的登录帐户（例如&nbsp;&nbsp;&nbsp;&nbsp; sa )进行连接，解决方法如下&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; <br />设置允许SQL&nbsp;&nbsp;&nbsp;&nbsp; Server身份登录&nbsp;&nbsp;&nbsp;&nbsp; (基本上这个很有用)<br />&nbsp;&nbsp;&nbsp; 操作步骤：<br />&nbsp;&nbsp;&nbsp; 1。在企业管理器中，展开&#8221;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server组&#8221;，鼠标右键点击SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务器的名称&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 2。选择&#8221;属性&#8221;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 3。再选择&#8221;安全性&#8221;选项卡&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 4。在&#8221;身份验证&#8221;下，选择&#8221;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server和&nbsp;&nbsp;&nbsp;&nbsp; Windows&#8221;<br />&nbsp;&nbsp;&nbsp; 5。确定,并重新启动SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务。 <br />===============</p>
+<p>简单明了的五步，但是我在我的SQL server 2005怎么也找不到什么是“企业管理器”，更别谈什么“SQL sever&#8221;组了，翻了几十个网页，最终放弃了这种方式。<br />究其原因，来自微软的官方解释：<br />How to set up Mixed Mode security (Enterprise Manager)<br />New Information - SQL Server 2000 SP3.</p>
+<p>Security Note&nbsp; When possible, use Windows Authentication.<br />To set up Mixed Mode security </p>
+<p>Expand a server group.<br />Right-click a server, and then click Properties.<br />Click the Security tab.<br />Under Authentication, click SQL Server and Windows.<br />Under Audit level, select the level at which user accesses to Microsoft® SQL Server™ are recorded in the SQL Server error log:<br /><br />这下明白了吧，原来是SQL server 2000 SP3的，那么多网页挂上2005的名头~~~</p>
+<p>继续查找，什么TCP/IP,namepipe方法全出来了，就没一个靠谱的，外围配置管理器打开remote control和broswer服务也没用，半天的试验，才发现SQL2005 managment studio里面直接可以解决：</p>
+<p>·更改安全身份验证模式 </p>
+<p>在 SQL Server Management Studio 的对象资源管理器中，右键单击服务器，再单击“属性”。<br />在“安全性”页上的“服务器身份验证”下，选择新的服务器身份验证模式，再单击“确定”。<br />在 SQL Server Management Studio 对话框中，单击“确定”以确认需要重新启动 SQL Server。<br />从 SQL Server Management Studio 重新启动 SQL Server <br />在对象资源管理器中，右键单击您的服务器，再单击“重新启动”。如果运行有 SQL Server 代理，则也必须重新启动该代理。</p>
+<p>·使用 Transact-SQL 启用 sa 登录帐户 （就是在studio里面点“新建查询”）<br />执行下列语句以启用 sa 密码并分配一个密码</p>
+<p>ALTER LOGIN sa ENABLE ;<br />GO<br />ALTER LOGIN sa WITH PASSWORD = &#8216;password&#8217; ;（引号不要去掉，用自己的密码换掉password） <br />GO</p>
+<p>·使用 Management Studio 启用 sa 登录帐户 </p>
+<p>在对象资源管理器中，依次展开“安全”、“登录名”，右键单击“sa”，再单击“属性”。<br />在“常规”页上，您可能需要为 sa 登录名创建密码并确认该密码。<br />在“状态”页的“登录”部分中，单击“启用”，然后单击“确定”。</p>
+<p>基本上可以搞定，我自己建了一个帐户，却没有建表格的权限，最后还是用回了sa。</p>
+<p>归根结底，18452错误就是当初安装SQL server的时候没有选windows和SQL双重身份登陆的选项，找到能修改的地方基本就能搞定了。<br />顺便分享一下找到的18456错误，基本上就是三个原因：你用户名错了；你密码错了，你用户名和密码都错了。总结得很酷</p></p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Text authored by <span class="fn">walker</span></span>
+
+
+      
+
+
+    </p>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/03/03/win7%E5%A4%9A%E5%9B%BE%E4%BD%93%E9%AA%8C/" title="Previous Post: Win7多图体验">&laquo; Win7多图体验</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/03/07/%E7%9C%8B%E4%B8%8D%E8%A7%81%E6%9C%AA%E6%9D%A5%EF%BC%8C%E9%82%A3%E5%B0%B1%E7%9C%8B%E8%BF%87%E7%A8%8B/" title="Next Post: 看不见未来，那就看过程">看不见未来，那就看过程 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Website copyright &copy; 2014 - walker |
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/TheChymera/Koenigspress">Königspress</a></span>.
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
