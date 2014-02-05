@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://walkerwzy.github.io/atom.xml" rel="self"/>
   <link href="http://walkerwzy.github.io/"/>
-  <updated>2014-02-05T16:58:21+08:00</updated>
+  <updated>2014-02-05T17:15:35+08:00</updated>
   <id>http://walkerwzy.github.io/</id>
   <author>
     <name><![CDATA[walker]]></name>
@@ -12,5 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://walkerwzy.github.io/blog/2014/02/05/hello-world/"/>
+    <updated>2014-02-05T17:05:58+08:00</updated>
+    <id>http://walkerwzy.github.io/blog/2014/02/05/hello-world</id>
+    <content type="html"><![CDATA[<p>hello world from octopress</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Your First Post]]></title>
+    <link href="http://walkerwzy.github.io/blog/2013/12/28/lorem/"/>
+    <updated>2013-12-28T23:49:17+08:00</updated>
+    <id>http://walkerwzy.github.io/blog/2013/12/28/lorem</id>
+    <content type="html"><![CDATA[<p>This is a lipsum page to demonstrate the theme&rsquo;s typography. Modify this post to your heart&rsquo;s content &ndash; or simply delete it.</p>
+
+<p>Lorem ipsum dolor sit amet, ut brute legimus honestatis cum. Eirmod verear mei ne, id falli conclusionemque est, autem populo duo et. Causae noluisse ex sed. Solet mentitum salutandi ad mei, vis ex esse prima nullam, tation melius aliquid pri ea. Minimum sententiae mei ad, mei et reque novum.</p>
+
+<p>Eu nec eirmod inermis, nominavi deleniti electram ut mei. Veri quidam vivendum sit id, voluptaria percipitur deterruisset an nec. Mei mazim erroribus eu, his in errem nonumy comprehensam. Modo pericula duo id, te vis facete verear. Ex cum volutpat corrumpit aliquando, ad vim assentior argumentum temporibus.</p>
+
+<p>Id est eros justo movet, duo eu alii vitae. Quo altera imperdiet efficiantur in, nec error iudico an. Sed an etiam consul, invenire platonem nam an. Nec an integre splendide, libris oportere duo ei. Has eu solet sententiae, ex nam noster tractatos, sonet patrioque nec ad.</p>
+
+<p>An minim mollis mediocrem est, lucilius atomorum ex eum. Quaeque probatus qui cu, ut mutat dolorem epicurei pro, vel labores delicata rationibus et. Cu eos sumo inermis, viderer molestiae assueverit ius ad. Cum atqui error insolens in. Iuvaret adolescens referrentur cu pri.</p>
+
+<p>Ei putant perfecto atomorum eos, an civibus hendrerit sit. Pri cu probo nominavi, et sea cetero hendrerit incorrupte. Amet unum prompta per at, impedit reprehendunt an cum, vix laudem dolorem at. Suas blandit molestie in eum.</p>
+]]></content>
+  </entry>
   
 </feed>
