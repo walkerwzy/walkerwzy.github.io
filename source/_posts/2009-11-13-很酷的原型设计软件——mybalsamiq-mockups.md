@@ -1,0 +1,29 @@
+---
+layout: post
+title: 很酷的原型设计软件——myBalsamiq Mockups
+categories:
+- default
+tags: []
+published: true
+comments: true
+---
+<p><p>虽然我一向喜欢介绍些好玩的东西，但这次有点动机不纯，因为我打算把这篇文章po上去后就把链接发给此软件作者，貌似说这样可能得到此软件的序列号，谁知道呢？反正我舍不得花这79美刀，就帮作者传播传播吧，既然是原型设计，下面是我做的两个小demo，一个网站的，一个手机的，网站的做了一个企业应用网站（图一），一个简单的博客（图二），图三图四顺延，另外，找不到图一图二图三图四的话，请自己数，我压根就没写~~~ </p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mJRPveuooB8Y27x2qqlDKV4IG9GbCGgqRDVFRQthenVCw3ClMLdV6ZCQ7dTlDnCmyHhVWtJ6hMyU6MlhZaSB80EYmv0pvymKCtoHZPQI0dUVpISwrmPD8kmFjVmOfHVRnBvHyLs6qCYpSzS_WcwWEeA/20091113210855031[3].png" rel="WLPP"><img border="0" alt="20091113210855031" src="https://6nxlsa.blu.livefilestore.com/y1mafHx24X4TDpFZ_-SCtOsG-ZiBoCX5DqRhNCIf53yx_qysjGCZnb75orGNOawhLhzGrHUV25tOuGACwxzfC1bVf1derFDVmY2BLeN7T2mPB1dy6sPcCyf8JjIokM9GNwJiQvxmuLq7A5c1YMBtrRXXg/20091113210855031_thumb[1].png" width="571" height="374" /></a> </p>
+<p>对了，就是这种涂鸦的风格，而且简单易用，比一般专业的原型工具要容易上手得多。。。基本上采用了.net的拖控件的方式，呵呵，写.net的时候我就极力避免这种方式，唉，可见还是拖动的比较容易亲近人啊。。。</p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mXYkQGoOazHfsWxmpex5uSii7JgLfYOK8lhXSW73XTf2abBJJqIy4ATjdHXtVLiFwXn9B1fS_R-YsQEH5SyG3WOvcQvn8qurPywJjxrtH8k3_dpYpKRP3lSD4BAvY7z0ok0SDxi-vRbxpaaDQkmeJJw/20091113211440937[3].png" rel="WLPP"><img border="0" alt="20091113211440937" src="https://6nxlsa.blu.livefilestore.com/y1mfrYPoBRnOu9H1ZHt4M9cVXtVvI2lg2BAWoFLB-80dcJwiVu-eC9awcD69joiUIO9y8GwZ6eeldF2TsDPAE-EUO6UmVHMgshZEq7tl85MgI0oGiF9-L64TCT0LtgMV-rUIs5j_C5Rk1dCTu7pp4MFaA/20091113211440937_thumb[1].png" width="545" height="375" /></a> </p>
+<p>再来的手机地图</p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mhVFC_v6wmzUDAbFuQtveJ4k0qoNMqVj0_z1nn_gnDf7bIoay3qHsjl089RVO5YZG8xr2HgP3C6Z0e31qOLm3gwZyWlBEOJruQtQoc3RhWlgmlEYqq3ccP3qeJJgpW3YjMYT78Q7xGz_Y7ieg_84DNw/20091113214209828[3].png" rel="WLPP"><img border="0" alt="20091113214209828" src="https://6nxlsa.blu.livefilestore.com/y1mT-BnEURzytuQ9ZQJljRAN_NObYWJyZ6JO9wVQt58_a2FMprakGdJglDE1Q0vIts-NTY3VIFld1gJ8I_2gekL_-S_LfQCsPo7kZkTEirvsXnh3ggcsLP0xXsXwy1ovaEqInQ_Sn99o55qozxGqvmFGQ/20091113214209828_thumb[1].png" width="519" height="290" /></a>&nbsp; </p>
+<p>最后来一个竖版的凑数</p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mVnuSHhQRswxlN_A71pRhHMctKjOHhFCQ8tQeOXzt3ARXU2iYM9ZjXzsvciBQSRh9Jwpsm8uLqwo7ITFbvgHLZJxgyZsSvrBiGSYkiu9hzJaji9OuJ0KsHb08kd0FKZkPKumX9HQEKrvX-_xE-JETxg/20091113214145812[3].png" rel="WLPP"><img border="0" alt="20091113214145812" src="https://6nxlsa.blu.livefilestore.com/y1mFXo3aiB--D-iHGu9t8QKjjoyrJN1svs0NSw3KaZSsYYUvZXCxiOQ1sdNprY9gjnXOsnrlzvUVoaacBW5_is4Pn_m9Rws60BMMUrGmVvX3HOLn3iIpMz9gj67a55rp_UT8mPjsAS7ok5g7dWTadWLfw/20091113214145812_thumb[1].png" width="293" height="515" /></a></p>
+<p>我为什么敢这么嚣张？因为作者是意大利的，虽然不排除他能看懂中文，因为估计这些时间来，他收到了不少中国人的邮件吧，看多了能把中文学会吗？哈，哈哈哈，</p>
+<p>这个软件适用于产品经理，设计师，blablabla….反正能迅速用手绘的风格阐释你的想法就是了，感兴趣的话，以下是链接</p>
+<p>网址：http://www.balsamiq.com/<br />在线演示地址：http://www.balsamiq.com/products/mockups<br />试用网址：<a href="http://www.balsamiq.com/demos/mockups/Mockups.html">http://www.balsamiq.com/demos/mockups/Mockups.html</a> 
+</p><p>好吧，先让你们预览下操作界面，基于Adobe Air的，装一个吧。话说以后的电脑都要装齐各种平台才能用了，AIR，.Net Framework，Java。。。额滴神哪</p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mW23PJV-kaaD9qxq5ydz1IakC4ij1u29T3pvHjVTE3RFnFaKkwdpbPtsZnV-TK0b_irUhWS9x0vV7FJapk33jBBYD7m4IXaUAUtc53AJYcabLWuutMtC1CHOh3c0PH1aJ9dTbn41RoP4I2QBtux_5Fw/image[3]%202150CA01.png" rel="WLPP"><img border="0" alt="image" src="https://6nxlsa.blu.livefilestore.com/y1mNAc9SRf-q1jFCUI-mBvsECcMJ6IFc2rLkh9ZRcxwLW7G_WjHjLSHezGKfY6sBk3IJR3Ex0axrk94rAQOVNm9FxPmnJ9fhQqe03jowxBfxZ93iKBUn-no2v94FncTr_xajbCH2TNeiC7Ht_gTrN90Jw/image_thumb[1]%20409CF1F1.png" width="504" height="443" /></a>&nbsp;</p>
+<p>P.S. 忘了交待一下，为了与这种手绘风保持一致，我用了它自带的字体，所以无法输入中文，要输入中文也挺容易的，从view里面选择system fonts就可以了<br /><br /></p>
+<p>再P.S. 为了保证同软件风格一致，该软件还有一个比较酷的功能，把图片转换成手绘风格，献上两张转换效果图</p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mNmLrrbp6Tee4d61k-E8uZHE83cAeSHizjt3XZ6aT9pQEVDwLWkZyKpLH2sqkhMD9Tob6wYLg40oQcyLkECrWS3502OA0va-53ZZPHBae-1aayMZe7crpWObie9az-5vW6nexBl-p2-SO6Nezkaiieg/20091113233831687[3].png" rel="WLPP"><img border="0" alt="20091113233831687" src="https://6nxlsa.blu.livefilestore.com/y1mGdHshjVhdWjqIqQZX-avA-HE1nvJaUT3QsCl1VBlxHhxNSxvN9MmsLy09Ftdn2utvENKXz1ZWBzeTbtyVDXmOJy3H6Hi_o4YqERUPBdvape0258N6TJ2ZiDwXF67dbBRdjCuYwI3m0up88AvAL2Vsw/20091113233831687_thumb[1].png" width="628" height="266" /></a> </p>
+<p><a href="https://6nxlsa.blu.livefilestore.com/y1mM0nvONEb9K5WsCfdqwSrCVzMCoQW2rbMa-PIQI3leF_bvc0u1ZRt8F6BVfrX7mI2VlLWzZ-xNc8hu2Emc7Le-fvvUw2EgsDqEv8WVJq3goP91akMmck6WWRKnB4-3RsbQ89A4l5xomu-PKQJmXjKuQ/20091113233907765[3].png" rel="WLPP"><img border="0" alt="20091113233907765" src="https://6nxlsa.blu.livefilestore.com/y1mq-ebmG_JQmLskxz1aEOAvPefleq-IETwcYO3Ehv3fvDscaaC9qfWjWFX__pBAlOjc2FhLKOCIVLMu6ZNLsKytknikq4xWkxdlUYJq7h-QmcbRo1oy6IOqoybjbJCmJ5pWBJT7BjI31bu9vcd4Xhqmg/20091113233907765_thumb[1].png" width="349" height="476" /></a> </p>
+<p>虽然转为手绘了，还是看得出此女，身<strike>体</strike>材确实傲人~~~</p>
+<p>P.S. again:</p>
+<p>7:43分（当然是邮件记录，别以为我会起那么早）终于收到了作者发过来的licence，不错，比我想象的要快，哈。不过显然国内blogger们误解了作者的意图，顺便也把我忽悠了。。。。作者的意思是向先他要licence，然后再去你的博客写review，而不是先写好再把链接拿过去换licence，唉，以讹传讹害死人啊。。。作者还在说期待早日看到我的review呢。。。得，我没拿到Licence都已经给review了，估计作者拿这一群中国人很无语：D</p><p>天，P.S.上瘾了。。。根据纪录，作者点我的链接的IP来自美国，并非意大利，莫非又一以讹传讹？况且传到YouTube上的视频demo可是一口流利的美式英语，唉，靠道听途说想获得原始信息真难~~~</p></p>

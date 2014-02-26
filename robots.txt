@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://walkerwzy.github.io/sitemap.xml 
