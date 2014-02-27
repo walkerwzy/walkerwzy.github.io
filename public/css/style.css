@@ -242,7 +242,7 @@ article .entry-content blockquote {
   font-family: "Georgia", serif;
   padding: 10px 25px 25px;
   position: relative;
-  text-align: center;
+  text-align: left;
 }
 article .entry-content blockquote:before,
 article .entry-content blockquote:after {
