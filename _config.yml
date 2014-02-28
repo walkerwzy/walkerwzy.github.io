@@ -78,6 +78,7 @@ disqus_shortname: walkerwzy
 
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
+Plugins: [hexo-generator-feed]
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
 ## [landscape, light, phase]
 theme: phase
