@@ -1,0 +1,67 @@
+date: 2014-03-03 23:31:46.635
+argv: node /usr/local/bin/hexo s
+os: Darwin 13.1.0 darwin x64
+version:
+  hexo: 2.4.5
+  http_parser: 1.0
+  node: 0.10.26
+  v8: 3.14.5.9
+  ares: 1.9.0-DEV
+  uv: 0.10.25
+  zlib: 1.2.3
+  modules: 11
+  openssl: 1.0.1e
+---
+
+[debug] 23:31:43.090 Configuration file load successfully
+[debug] 23:31:43.092 Version info checked successfully
+[debug] 23:31:43.125 Loading database.
+[debug] 23:31:43.190 Plugin loaded successfully: hexo-generator-feed
+[debug] 23:31:43.218 Plugin loaded successfully: hexo-migrator-rss
+[debug] 23:31:43.237 Theme layout loaded
+[debug] 23:31:43.256 Theme configuration loaded
+[debug] 23:31:43.280 Theme source loaded
+[debug] 23:31:44.083 Processed: CNAME
+[debug] 23:31:44.108 Theme language files loaded
+[debug] 23:31:44.370 Processed: 404.html
+[debug] 23:31:46.628 Processed: _posts/2004-06-08-108.md
+[debug] 23:31:46.628 Processed: _posts/2004-06-08-logo.md
+[error] 23:31:46.629 { rawMessage: 'Unable to parse.',
+  parsedLine: 5,
+  snippet: 'photos:[http://walkerwzy.qiniudn.com/blog/bridge.jpg]',
+  parsedFile: null,
+  message: 'Unable to parse.',
+  domain: 
+   { domain: null,
+     _events: { error: [Function] },
+     _maxListeners: 10,
+     members: [],
+     _disposed: true },
+  domainThrown: true }
+[debug] 23:31:46.634 Processed: _posts/2004-06-08-还是无题。.md
+[debug] 23:31:46.635 Processed: _posts/2004-06-09-我的填空，随处答案转.md
+[debug] 23:31:46.635 Processed: _posts/2004-06-13-碎语.md
+[debug] 23:31:46.635 Processed: _posts/2004-06-15-非音乐.md
+[debug] 23:31:46.635 Processed: _posts/2004-06-26-还爱你吗？.md
+[debug] 23:31:46.635 Processed: _posts/2004-07-10-失去.md
+[debug] 23:31:46.635 Processed: _posts/2004-07-10-苍蝇.md
+[debug] 23:31:46.635 Processed: _posts/2005-05-05-人生如戏.md
+[debug] 23:31:46.635 Processed: _posts/2005-06-29-上帝没有给它鳔转贴励志.md
+[debug] 23:31:46.635 Processed: _posts/2005-08-12-system-of-a-down-乐队-〔chop-suey〕.md
+[debug] 23:31:46.635 Processed: _posts/2005-09-15-曾经的文字.md
+[debug] 23:31:46.635 Processed: _posts/2005-09-16-加菲猫经典语录转.md
+[debug] 23:31:46.635 Processed: _posts/2005-09-30-转贴『岛屿音乐』蔚蓝色的自由之光→-azure-ray-safe-and-sound.md
+[debug] 23:31:46.635 Processed: _posts/2005-12-11-（转载）兔子和狼.md
+[debug] 23:31:46.635 Processed: _posts/2006-02-03-yupoo密码忘了，只能从日志是发图了.md
+[debug] 23:31:46.635 Processed: _posts/2006-03-02-n0.md
+[debug] 23:31:46.635 Processed: _posts/2006-03-26-潘多拉.md
+[debug] 23:31:46.635 Processed: _posts/2006-05-08-屋外暴雨.md
+[debug] 23:31:46.635 Processed: _posts/2006-06-11-本来有标题的，现在没有了.md
+[debug] 23:31:46.635 Processed: _posts/2006-07-17-to-jim.md
+[debug] 23:31:46.635 Processed: _posts/2006-07-29-很不容易想到上来的，所以别让我想标题了.md
+[debug] 23:31:46.635 Processed: _posts/2006-07-30-文字游戏.md
+[debug] 23:31:46.635 Processed: _posts/2006-07-30-牢骚.md
+[debug] 23:31:46.635 Processed: _posts/2006-08-01-annett-louisan和她的das-liebeslied.md
+[debug] 23:31:46.635 Processed: _posts/2006-08-01-god-rest-ye-merry-gentlemen.md
+[debug] 23:31:46.636 Processed: _posts/2006-08-02-飘.md
+[debug] 23:31:46.636 Processed: _posts/2006-08-05-没心没肺.md
