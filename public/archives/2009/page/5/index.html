@@ -236,7 +236,7 @@
   <header>
     
   
-    <h1 class="title"><a href="/2009/03/07/看不见未来，那就看过程/">看不见未来，那就看过程</a></h1>
+    <h1 class="title"><a href="/2009/03/07/sql-server-2005-18452-错误/">SQL server 2005 18452 错误</a></h1>
   
 
     <time datetime="2009-03-06T16:00:00.000Z">
@@ -245,7 +245,20 @@
   </header>
   <div class="entry-content">
     
-      <p>……<br /><br />現在這時候應該要「創造需求」而不是「攻擊其他廠」，應該要「刺激新需求」(stimulate)而不是「重導舊需求」(redirect)，他舉了一個例，譬如現代汽車最近在美國做的廣告就是說「We’re in this together」，在這艱困時期我們一起走！如果在買下一部現代汽車之後12個月內若車主被資遣，可以將車子送還給車廠。<br /><br />……<br /><br />目前大家沒信心，在心理學稱為「近視效應」(recency effect)。這是在說，人們很自然的會以「最近的過去」，來判斷「最遠的未來」，但這樣根本不符合平衡的原則，因為，最遠的未來應該是從最「遠」的過去一路下來而導致的，而不是最「近」的過去來導致的。<br /><br />……<br /><br />每天早上出門，我們永遠不知道晚上是否能回家。未來是完全不可預測的，現在這時候，看不到就是看不到，摸不著就是摸不著，就算是從最近的過去、最遠的過去，中間怎麼做data mining，天機不可洩露，永遠都是看不到、摸不著的。<br /><br />……<br /><br />全文见：<a href="http://mr6.cc/?p=2881#more-2881" target="_blank"><a href="http://mr6.cc/?p=2881#more-2881">http://mr6.cc/?p=2881#more-2881</a></a></p>
+      <p><p>决定把数据库装到自己机子上，可是非常不顺利，要选用SQL身份方式登陆，一番配置完成后，非常爽快地提示我连接不成功，一看错误代码，18452，于是又开始漫长的求解过程。。。中文网络遍地不负责任的转贴让我很不爽，以下是被转贴最多的一种方式：</p>
+<p>==============<br />无法连接到服务器&nbsp;&nbsp; <br />服务器：消息18452，&nbsp;&nbsp;&nbsp;&nbsp; 级别16，状态1&nbsp;&nbsp; <br />[Microsoft][ODBC&nbsp;&nbsp;&nbsp;&nbsp; SQL&nbsp;&nbsp;&nbsp;&nbsp; Server&nbsp;&nbsp;&nbsp;&nbsp; Driver][SQL&nbsp;&nbsp;&nbsp;&nbsp; Server]用户‘sa’登陆失败。原因：未与信任SQL&nbsp;&nbsp;&nbsp;&nbsp; Server连接相关联&nbsp;&nbsp;&nbsp; <br />该错误产生的原因是由于SQL&nbsp;&nbsp;&nbsp;&nbsp; Server使用了&quot;仅&nbsp;&nbsp;&nbsp;&nbsp; Windows&quot;的身份验证方式，因此用户无法使用SQL&nbsp;&nbsp;&nbsp;&nbsp; Server的登录帐户（例如&nbsp;&nbsp;&nbsp;&nbsp; sa )进行连接，解决方法如下&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; <br />设置允许SQL&nbsp;&nbsp;&nbsp;&nbsp; Server身份登录&nbsp;&nbsp;&nbsp;&nbsp; (基本上这个很有用)<br />&nbsp;&nbsp;&nbsp; 操作步骤：<br />&nbsp;&nbsp;&nbsp; 1。在企业管理器中，展开&quot;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server组&quot;，鼠标右键点击SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务器的名称&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 2。选择&quot;属性&quot;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 3。再选择&quot;安全性&quot;选项卡&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 4。在&quot;身份验证&quot;下，选择&quot;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server和&nbsp;&nbsp;&nbsp;&nbsp; Windows&quot;<br />&nbsp;&nbsp;&nbsp; 5。确定,并重新启动SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务。 <br />===============</p>
+<p>简单明了的五步，但是我在我的SQL server 2005怎么也找不到什么是“企业管理器”，更别谈什么“SQL sever&quot;组了，翻了几十个网页，最终放弃了这种方式。<br />究其原因，来自微软的官方解释：<br />How to set up Mixed Mode security (Enterprise Manager)<br />New Information - SQL Server 2000 SP3.</p>
+<p>Security Note&nbsp; When possible, use Windows Authentication.<br />To set up Mixed Mode security </p>
+<p>Expand a server group.<br />Right-click a server, and then click Properties.<br />Click the Security tab.<br />Under Authentication, click SQL Server and Windows.<br />Under Audit level, select the level at which user accesses to Microsoft® SQL Server™ are recorded in the SQL Server error log:<br /><br />这下明白了吧，原来是SQL server 2000 SP3的，那么多网页挂上2005的名头~~~</p>
+<p>继续查找，什么TCP/IP,namepipe方法全出来了，就没一个靠谱的，外围配置管理器打开remote control和broswer服务也没用，半天的试验，才发现SQL2005 managment studio里面直接可以解决：</p>
+<p>·更改安全身份验证模式 </p>
+<p>在 SQL Server Management Studio 的对象资源管理器中，右键单击服务器，再单击“属性”。<br />在“安全性”页上的“服务器身份验证”下，选择新的服务器身份验证模式，再单击“确定”。<br />在 SQL Server Management Studio 对话框中，单击“确定”以确认需要重新启动 SQL Server。<br />从 SQL Server Management Studio 重新启动 SQL Server <br />在对象资源管理器中，右键单击您的服务器，再单击“重新启动”。如果运行有 SQL Server 代理，则也必须重新启动该代理。</p>
+<p>·使用 Transact-SQL 启用 sa 登录帐户 （就是在studio里面点“新建查询”）<br />执行下列语句以启用 sa 密码并分配一个密码</p>
+<p>ALTER LOGIN sa ENABLE ;<br />GO<br />ALTER LOGIN sa WITH PASSWORD = &#39;password&#39; ;（引号不要去掉，用自己的密码换掉password） <br />GO</p>
+<p>·使用 Management Studio 启用 sa 登录帐户 </p>
+<p>在对象资源管理器中，依次展开“安全”、“登录名”，右键单击“sa”，再单击“属性”。<br />在“常规”页上，您可能需要为 sa 登录名创建密码并确认该密码。<br />在“状态”页的“登录”部分中，单击“启用”，然后单击“确定”。</p>
+<p>基本上可以搞定，我自己建了一个帐户，却没有建表格的权限，最后还是用回了sa。</p>
+<p>归根结底，18452错误就是当初安装SQL server的时候没有选windows和SQL双重身份登陆的选项，找到能修改的地方基本就能搞定了。<br />顺便分享一下找到的18456错误，基本上就是三个原因：你用户名错了；你密码错了，你用户名和密码都错了。总结得很酷</p></p>
 
     
     
@@ -276,7 +289,7 @@
   <header>
     
   
-    <h1 class="title"><a href="/2009/03/07/sql-server-2005-18452-错误/">SQL server 2005 18452 错误</a></h1>
+    <h1 class="title"><a href="/2009/03/07/看不见未来，那就看过程/">看不见未来，那就看过程</a></h1>
   
 
     <time datetime="2009-03-06T16:00:00.000Z">
@@ -285,20 +298,7 @@
   </header>
   <div class="entry-content">
     
-      <p><p>决定把数据库装到自己机子上，可是非常不顺利，要选用SQL身份方式登陆，一番配置完成后，非常爽快地提示我连接不成功，一看错误代码，18452，于是又开始漫长的求解过程。。。中文网络遍地不负责任的转贴让我很不爽，以下是被转贴最多的一种方式：</p>
-<p>==============<br />无法连接到服务器&nbsp;&nbsp; <br />服务器：消息18452，&nbsp;&nbsp;&nbsp;&nbsp; 级别16，状态1&nbsp;&nbsp; <br />[Microsoft][ODBC&nbsp;&nbsp;&nbsp;&nbsp; SQL&nbsp;&nbsp;&nbsp;&nbsp; Server&nbsp;&nbsp;&nbsp;&nbsp; Driver][SQL&nbsp;&nbsp;&nbsp;&nbsp; Server]用户‘sa’登陆失败。原因：未与信任SQL&nbsp;&nbsp;&nbsp;&nbsp; Server连接相关联&nbsp;&nbsp;&nbsp; <br />该错误产生的原因是由于SQL&nbsp;&nbsp;&nbsp;&nbsp; Server使用了&quot;仅&nbsp;&nbsp;&nbsp;&nbsp; Windows&quot;的身份验证方式，因此用户无法使用SQL&nbsp;&nbsp;&nbsp;&nbsp; Server的登录帐户（例如&nbsp;&nbsp;&nbsp;&nbsp; sa )进行连接，解决方法如下&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; <br />设置允许SQL&nbsp;&nbsp;&nbsp;&nbsp; Server身份登录&nbsp;&nbsp;&nbsp;&nbsp; (基本上这个很有用)<br />&nbsp;&nbsp;&nbsp; 操作步骤：<br />&nbsp;&nbsp;&nbsp; 1。在企业管理器中，展开&quot;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server组&quot;，鼠标右键点击SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务器的名称&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 2。选择&quot;属性&quot;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 3。再选择&quot;安全性&quot;选项卡&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; 4。在&quot;身份验证&quot;下，选择&quot;SQL&nbsp;&nbsp;&nbsp;&nbsp; Server和&nbsp;&nbsp;&nbsp;&nbsp; Windows&quot;<br />&nbsp;&nbsp;&nbsp; 5。确定,并重新启动SQL&nbsp;&nbsp;&nbsp;&nbsp; Server服务。 <br />===============</p>
-<p>简单明了的五步，但是我在我的SQL server 2005怎么也找不到什么是“企业管理器”，更别谈什么“SQL sever&quot;组了，翻了几十个网页，最终放弃了这种方式。<br />究其原因，来自微软的官方解释：<br />How to set up Mixed Mode security (Enterprise Manager)<br />New Information - SQL Server 2000 SP3.</p>
-<p>Security Note&nbsp; When possible, use Windows Authentication.<br />To set up Mixed Mode security </p>
-<p>Expand a server group.<br />Right-click a server, and then click Properties.<br />Click the Security tab.<br />Under Authentication, click SQL Server and Windows.<br />Under Audit level, select the level at which user accesses to Microsoft® SQL Server™ are recorded in the SQL Server error log:<br /><br />这下明白了吧，原来是SQL server 2000 SP3的，那么多网页挂上2005的名头~~~</p>
-<p>继续查找，什么TCP/IP,namepipe方法全出来了，就没一个靠谱的，外围配置管理器打开remote control和broswer服务也没用，半天的试验，才发现SQL2005 managment studio里面直接可以解决：</p>
-<p>·更改安全身份验证模式 </p>
-<p>在 SQL Server Management Studio 的对象资源管理器中，右键单击服务器，再单击“属性”。<br />在“安全性”页上的“服务器身份验证”下，选择新的服务器身份验证模式，再单击“确定”。<br />在 SQL Server Management Studio 对话框中，单击“确定”以确认需要重新启动 SQL Server。<br />从 SQL Server Management Studio 重新启动 SQL Server <br />在对象资源管理器中，右键单击您的服务器，再单击“重新启动”。如果运行有 SQL Server 代理，则也必须重新启动该代理。</p>
-<p>·使用 Transact-SQL 启用 sa 登录帐户 （就是在studio里面点“新建查询”）<br />执行下列语句以启用 sa 密码并分配一个密码</p>
-<p>ALTER LOGIN sa ENABLE ;<br />GO<br />ALTER LOGIN sa WITH PASSWORD = &#39;password&#39; ;（引号不要去掉，用自己的密码换掉password） <br />GO</p>
-<p>·使用 Management Studio 启用 sa 登录帐户 </p>
-<p>在对象资源管理器中，依次展开“安全”、“登录名”，右键单击“sa”，再单击“属性”。<br />在“常规”页上，您可能需要为 sa 登录名创建密码并确认该密码。<br />在“状态”页的“登录”部分中，单击“启用”，然后单击“确定”。</p>
-<p>基本上可以搞定，我自己建了一个帐户，却没有建表格的权限，最后还是用回了sa。</p>
-<p>归根结底，18452错误就是当初安装SQL server的时候没有选windows和SQL双重身份登陆的选项，找到能修改的地方基本就能搞定了。<br />顺便分享一下找到的18456错误，基本上就是三个原因：你用户名错了；你密码错了，你用户名和密码都错了。总结得很酷</p></p>
+      <p>……<br /><br />現在這時候應該要「創造需求」而不是「攻擊其他廠」，應該要「刺激新需求」(stimulate)而不是「重導舊需求」(redirect)，他舉了一個例，譬如現代汽車最近在美國做的廣告就是說「We’re in this together」，在這艱困時期我們一起走！如果在買下一部現代汽車之後12個月內若車主被資遣，可以將車子送還給車廠。<br /><br />……<br /><br />目前大家沒信心，在心理學稱為「近視效應」(recency effect)。這是在說，人們很自然的會以「最近的過去」，來判斷「最遠的未來」，但這樣根本不符合平衡的原則，因為，最遠的未來應該是從最「遠」的過去一路下來而導致的，而不是最「近」的過去來導致的。<br /><br />……<br /><br />每天早上出門，我們永遠不知道晚上是否能回家。未來是完全不可預測的，現在這時候，看不到就是看不到，摸不著就是摸不著，就算是從最近的過去、最遠的過去，中間怎麼做data mining，天機不可洩露，永遠都是看不到、摸不著的。<br /><br />……<br /><br />全文见：<a href="http://mr6.cc/?p=2881#more-2881" target="_blank"><a href="http://mr6.cc/?p=2881#more-2881">http://mr6.cc/?p=2881#more-2881</a></a></p>
 
     
     
@@ -464,46 +464,6 @@
   <header>
     
   
-    <h1 class="title"><a href="/2009/02/13/为什么我们会内需不足？/">为什么我们会内需不足？</a></h1>
-  
-
-    <time datetime="2009-02-12T16:00:00.000Z">
-  <span class="day">13</span><span class="month">Feb</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><span class="Apple-style-span"><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000"><span class="Apple-style-span"><span style="margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;font-size: medium">文章来源：</span><a href="http://q.sohu.com/forum/6/topic/4888517" target="_blank"><span style="margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;font-size: medium"><a href="http://q.sohu.com/forum/6/topic/4888517">http://q.sohu.com/forum/6/topic/4888517</a></span></a></span></font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么我们会内需不足?中国的未来我们要走向美国，还是变成下一个拉美？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么我们会内需不足?为什么我们没有强大的中产阶级拉动内需？我们的财富到那儿去了？ 看完了如下的两个实例，你就会明白为什么了。&nbsp;<br />看看拉美与美国的差距，就会明白我们今天内需不足的状况是怎么形成的，拉美的贫穷在于它没有形成良好的财富再生体制，套一句比较主流的话，它缺乏一种财富积累上的可持续发展能力。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">举一个简单的例子来说明这样的差别。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">第一种情况：</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">假设在一个地方发现了金矿，来了一个人投资建了一个矿场，雇一百个工人为他淘金，每年获利1000万，矿主把其中的50%做为工人工资发下去，每个工人每年收入5万，他们拿一万来租房子，剩下的四万可以结婚，生孩子，成家立业，矿主手里还有五百万，可以做投资。因为工人手里有钱，要安家落户，所以，房子出现需求。于是矿主用手里的钱盖房子，租给工人，或者卖给工人。工人要吃要喝，所以，开饭店，把工人手里的钱再赚回来。开饭馆又要雇别的工人，于是工人的妻子有了就业机会，也有了收入。一个家庭的消费需求就更大了。这样，几年之后，在这个地方出现了100个家庭。孩子要读书，有了教育的需求，于是有人来办学校，工人要约会，要消费，要做别的东西，于是有了电影院，有了商店，这样，50年过去以后，当这个地方的矿快被挖光了的时候，这里已经成了一个10万人左右的繁荣城市。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">而第二种情况是这样的：</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">假设同样发现了金矿，同样有人来投资开采，同样雇100工人，同样每年获利1000万，但是矿主把其中10%作为工资发下去，每个工人一年1万。这些钱只够他们勉强填饱肚子，没有钱租房子，没有钱讨老婆，只能住窝棚。矿主一年赚了900万，但是看一看满眼都是穷人，在本地再投资什么都不会有需求。于是，他把钱转到国外，因为在本地根本就不安全，他盖几个豪华别墅，雇几个工人当保镖，工人没有前途，除了拼命工作糊口，根本没有别的需求。唯一可能有戏的就是想办法骗一个老婆来，生一个漂亮女儿，或许还可以嫁给矿主做老婆。50年下去以后，这个地方除了豪华别墅，依然没有别的产业。等到矿挖完了，矿主带着巨款走了，工人要么流亡，要么男的为盗，女的为娼。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">这两个很简单的例子，其实就是拉美和美国不同的发展轨迹。也许今天美国人应该说，感谢华盛顿，他为美国缔造了最现代最科学的政治体制，感谢亨利.福特，他一手缔造了美国的中产阶级。而拉美国家就没有那么幸运了，他们的大独裁者创造了掠夺性的经济体制，以一种豪强的姿态疯狂瓜分着社会财富，而使整个经济虚脱，再也无力发展。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">这里我们有必要再提一下亨利.福特。古今中外所有的商业人物中，亨利.福特对社会经济的影响无人能出其右。正是他用他的T型车一手缔造了最初的中产阶级，并将美国社会第一个引入了现代社会（欧洲在这一点上，比美国晚了几十年）。亨利.福特说我要让我的工人能买得起我的T型车，于是他给工人发高工资，他还创造了流水线的生产方式，使汽车大幅降低，于是，福特公司一跃成为最大的汽车公司，于是有了钱的工人可以买汽车，可以买房子，可以做其它的消费，于是中产阶级诞生了。于是在完成西部扩张，在领土上已经没有回旋余地的美国发现了另外一个金矿，迅速成长的中产阶级带动了巨大的需求，支撑起庞大的国内市场，继续拉动经济高速增长。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">美国从来都是一个依靠国内需求实现经济增长的国家，而中国空有12亿人口，却居然内需不足？不得不靠外贸来拉动经济增长？你说这不是咄咄怪事？你以为你是弹丸之国的日本哪？靠外向型经济就能膘满肠肥？12亿人口，谁能养活中国？除了你自己。也难怪现在全世界都在指着你，说你对人家倾销。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">说到这儿，该说到我们中国的问题了，为什么我们会内需不足，为什么我们会没有强大的中产阶级拉动内需？我们的财富到那儿去了？我们到底还有多大的持续增长能力？&nbsp;<br />我们改革的一个现实。中国的未来在哪里？我们要走向美国，还是变成下一个拉美？&nbsp;<br />中国用一种渐进的方式完成了自己的资本原始积累。这里边姑且不说什么权钱交易，制度漏洞，不劳而获。没有一个国家的资本原始积累是干净的。但关键就在于，在积累完成以后，我们该怎么做，是继续任贫富分化发展呢？还是创造我们自己的现代社会，创造纺锤形的社会结构。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们在做什么？房改、医改、企改、教改、股改，我们的改革正在走向哪里？为什么以疯狂搜刮普通大众并不多的社会财富来继续换取虚高的发展？比较中国和新加坡的十大差距，具体的不说，因为小国毕竟比中国这样一个泱泱大国要好管理得多。但是，让我深思良久的还是新加坡的体制中所投出来的平等思想，那种对普罗大众的关怀。而我们，能看到了哪些实质性的东西？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">中国从来就没有平等。过去没有，现在没有，将来有没有也很难说。我们只有所谓精英和庶民。 当所有的接受过良好教育的青年花一辈子的时间才能买一个安身之所的时候，当一个家庭的一个孩子上学就要掏空家里的一切积蓄的时候，当你在股市上投了钱就相当于捐款，被那些国企老板用什么MBO名正言顺的中饱私囊的时候，当一个农民辛苦一年的收入还不如一个大款吃一顿饭的开销的时候，你指望大家不去省吃俭用，疯狂存钱？你指望银行里里几万亿的存款能够转化为巨大的需求？你指望消费品市场能够持续火热？你指望有点闲钱的人能够去做更有用的投资而不是作为热钱去炒房？你指望本来就不多的社会财富能够更快更合理流动？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们很穷，因为我们钱本来就不多，却被装在了很少的人的腰包里，我们本来就不富裕，却在银行压一块，在房子上压一块，在股市里套一块，我钱看起来不少，但是就是转不动，都是死钱。于是，少数富人手里的钱只能去买LV、卡地亚、施华洛世奇，因为除了这个，他们也没什么可买的了。有些人还跳出来粉饰太平，说什么奢侈中国。哪个大国的经济是靠几个奢侈品的品牌带动起来的？再说奢侈品跟你有啥关系啊？你瞎激动什么啊？你要是中国也有几个顶极奢侈品的品牌的话，跟着起起哄也还可以。那不过是让法国、意大利多赚点钱而已。这就是我们的中国。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们的农民还没有富裕起来，就已经为孩子的教育问题吐干净了血，我们的中产阶级还没有诞生就已经让股改制造的巨量“大小非”横遭劫掠，如今我们到哪儿找内需？我们除了出口，让全世界来养活我们以外，有什么办法？所以，全世界都说你倾销。是啊，12亿人，谁养活得了你啊？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么会这样，为什么我们的改革走入了这样的一种境地？教育收费，房价高企，股票圈钱，上帝啊，这是啥决策啊。世界上哪个已经富得流油的国家在当初是这么迫不及待地从自己的人民手里捞钱？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们的精英阶层都到哪儿去了？为什么这种用脚趾头都能想明白的问题，他们就想不明白？ 郎顾之争已经让所有的人都对内地的经济学家失望了。为什么整个内地的经济学家会败在一个叫郎咸平的香港人手里？只有一个问题——良知，不是大陆经济学家太笨了，而是他们已经被收买，良知泯灭，除了为主子叫几声以外，已经没有什么别的作用了。于是我们的*、资本、还有知识界人士就结成了联盟，制定着进一步瓜分财富的计划。于是我们的普罗大众就失去了话语权，就算惨叫几声，也不会被人听见。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">变强大，只有变得强大，你才能保护你自己，保护你想保护的人，你才能让自己的声音被更多的人所听到。</font></p></span></p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-  
-    <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
     <h1 class="title"><a href="/2009/02/13/qrp我爱你？/">qrp=我爱你？</a></h1>
   
 
@@ -529,6 +489,46 @@
   <div class="cats">
 <a href="/categories/thoughts/">thoughts</a></div>
 
+      
+      
+    </footer>
+    
+  </div>
+  
+</article>
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title"><a href="/2009/02/13/为什么我们会内需不足？/">为什么我们会内需不足？</a></h1>
+  
+
+    <time datetime="2009-02-12T16:00:00.000Z">
+  <span class="day">13</span><span class="month">Feb</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p><span class="Apple-style-span"><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000"><span class="Apple-style-span"><span style="margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;font-size: medium">文章来源：</span><a href="http://q.sohu.com/forum/6/topic/4888517" target="_blank"><span style="margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;font-size: medium"><a href="http://q.sohu.com/forum/6/topic/4888517">http://q.sohu.com/forum/6/topic/4888517</a></span></a></span></font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么我们会内需不足?中国的未来我们要走向美国，还是变成下一个拉美？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么我们会内需不足?为什么我们没有强大的中产阶级拉动内需？我们的财富到那儿去了？ 看完了如下的两个实例，你就会明白为什么了。&nbsp;<br />看看拉美与美国的差距，就会明白我们今天内需不足的状况是怎么形成的，拉美的贫穷在于它没有形成良好的财富再生体制，套一句比较主流的话，它缺乏一种财富积累上的可持续发展能力。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">举一个简单的例子来说明这样的差别。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">第一种情况：</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">假设在一个地方发现了金矿，来了一个人投资建了一个矿场，雇一百个工人为他淘金，每年获利1000万，矿主把其中的50%做为工人工资发下去，每个工人每年收入5万，他们拿一万来租房子，剩下的四万可以结婚，生孩子，成家立业，矿主手里还有五百万，可以做投资。因为工人手里有钱，要安家落户，所以，房子出现需求。于是矿主用手里的钱盖房子，租给工人，或者卖给工人。工人要吃要喝，所以，开饭店，把工人手里的钱再赚回来。开饭馆又要雇别的工人，于是工人的妻子有了就业机会，也有了收入。一个家庭的消费需求就更大了。这样，几年之后，在这个地方出现了100个家庭。孩子要读书，有了教育的需求，于是有人来办学校，工人要约会，要消费，要做别的东西，于是有了电影院，有了商店，这样，50年过去以后，当这个地方的矿快被挖光了的时候，这里已经成了一个10万人左右的繁荣城市。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">而第二种情况是这样的：</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">假设同样发现了金矿，同样有人来投资开采，同样雇100工人，同样每年获利1000万，但是矿主把其中10%作为工资发下去，每个工人一年1万。这些钱只够他们勉强填饱肚子，没有钱租房子，没有钱讨老婆，只能住窝棚。矿主一年赚了900万，但是看一看满眼都是穷人，在本地再投资什么都不会有需求。于是，他把钱转到国外，因为在本地根本就不安全，他盖几个豪华别墅，雇几个工人当保镖，工人没有前途，除了拼命工作糊口，根本没有别的需求。唯一可能有戏的就是想办法骗一个老婆来，生一个漂亮女儿，或许还可以嫁给矿主做老婆。50年下去以后，这个地方除了豪华别墅，依然没有别的产业。等到矿挖完了，矿主带着巨款走了，工人要么流亡，要么男的为盗，女的为娼。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">这两个很简单的例子，其实就是拉美和美国不同的发展轨迹。也许今天美国人应该说，感谢华盛顿，他为美国缔造了最现代最科学的政治体制，感谢亨利.福特，他一手缔造了美国的中产阶级。而拉美国家就没有那么幸运了，他们的大独裁者创造了掠夺性的经济体制，以一种豪强的姿态疯狂瓜分着社会财富，而使整个经济虚脱，再也无力发展。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">这里我们有必要再提一下亨利.福特。古今中外所有的商业人物中，亨利.福特对社会经济的影响无人能出其右。正是他用他的T型车一手缔造了最初的中产阶级，并将美国社会第一个引入了现代社会（欧洲在这一点上，比美国晚了几十年）。亨利.福特说我要让我的工人能买得起我的T型车，于是他给工人发高工资，他还创造了流水线的生产方式，使汽车大幅降低，于是，福特公司一跃成为最大的汽车公司，于是有了钱的工人可以买汽车，可以买房子，可以做其它的消费，于是中产阶级诞生了。于是在完成西部扩张，在领土上已经没有回旋余地的美国发现了另外一个金矿，迅速成长的中产阶级带动了巨大的需求，支撑起庞大的国内市场，继续拉动经济高速增长。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">美国从来都是一个依靠国内需求实现经济增长的国家，而中国空有12亿人口，却居然内需不足？不得不靠外贸来拉动经济增长？你说这不是咄咄怪事？你以为你是弹丸之国的日本哪？靠外向型经济就能膘满肠肥？12亿人口，谁能养活中国？除了你自己。也难怪现在全世界都在指着你，说你对人家倾销。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">说到这儿，该说到我们中国的问题了，为什么我们会内需不足，为什么我们会没有强大的中产阶级拉动内需？我们的财富到那儿去了？我们到底还有多大的持续增长能力？&nbsp;<br />我们改革的一个现实。中国的未来在哪里？我们要走向美国，还是变成下一个拉美？&nbsp;<br />中国用一种渐进的方式完成了自己的资本原始积累。这里边姑且不说什么权钱交易，制度漏洞，不劳而获。没有一个国家的资本原始积累是干净的。但关键就在于，在积累完成以后，我们该怎么做，是继续任贫富分化发展呢？还是创造我们自己的现代社会，创造纺锤形的社会结构。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们在做什么？房改、医改、企改、教改、股改，我们的改革正在走向哪里？为什么以疯狂搜刮普通大众并不多的社会财富来继续换取虚高的发展？比较中国和新加坡的十大差距，具体的不说，因为小国毕竟比中国这样一个泱泱大国要好管理得多。但是，让我深思良久的还是新加坡的体制中所投出来的平等思想，那种对普罗大众的关怀。而我们，能看到了哪些实质性的东西？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">中国从来就没有平等。过去没有，现在没有，将来有没有也很难说。我们只有所谓精英和庶民。 当所有的接受过良好教育的青年花一辈子的时间才能买一个安身之所的时候，当一个家庭的一个孩子上学就要掏空家里的一切积蓄的时候，当你在股市上投了钱就相当于捐款，被那些国企老板用什么MBO名正言顺的中饱私囊的时候，当一个农民辛苦一年的收入还不如一个大款吃一顿饭的开销的时候，你指望大家不去省吃俭用，疯狂存钱？你指望银行里里几万亿的存款能够转化为巨大的需求？你指望消费品市场能够持续火热？你指望有点闲钱的人能够去做更有用的投资而不是作为热钱去炒房？你指望本来就不多的社会财富能够更快更合理流动？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们很穷，因为我们钱本来就不多，却被装在了很少的人的腰包里，我们本来就不富裕，却在银行压一块，在房子上压一块，在股市里套一块，我钱看起来不少，但是就是转不动，都是死钱。于是，少数富人手里的钱只能去买LV、卡地亚、施华洛世奇，因为除了这个，他们也没什么可买的了。有些人还跳出来粉饰太平，说什么奢侈中国。哪个大国的经济是靠几个奢侈品的品牌带动起来的？再说奢侈品跟你有啥关系啊？你瞎激动什么啊？你要是中国也有几个顶极奢侈品的品牌的话，跟着起起哄也还可以。那不过是让法国、意大利多赚点钱而已。这就是我们的中国。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们的农民还没有富裕起来，就已经为孩子的教育问题吐干净了血，我们的中产阶级还没有诞生就已经让股改制造的巨量“大小非”横遭劫掠，如今我们到哪儿找内需？我们除了出口，让全世界来养活我们以外，有什么办法？所以，全世界都说你倾销。是啊，12亿人，谁养活得了你啊？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">为什么会这样，为什么我们的改革走入了这样的一种境地？教育收费，房价高企，股票圈钱，上帝啊，这是啥决策啊。世界上哪个已经富得流油的国家在当初是这么迫不及待地从自己的人民手里捞钱？</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">我们的精英阶层都到哪儿去了？为什么这种用脚趾头都能想明白的问题，他们就想不明白？ 郎顾之争已经让所有的人都对内地的经济学家失望了。为什么整个内地的经济学家会败在一个叫郎咸平的香港人手里？只有一个问题——良知，不是大陆经济学家太笨了，而是他们已经被收买，良知泯灭，除了为主子叫几声以外，已经没有什么别的作用了。于是我们的*、资本、还有知识界人士就结成了联盟，制定着进一步瓜分财富的计划。于是我们的普罗大众就失去了话语权，就算惨叫几声，也不会被人听见。</font></p><p style="margin-top: 15px;margin-right: 0px;margin-bottom: 15px;margin-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px"><font color="#000000">变强大，只有变得强大，你才能保护你自己，保护你想保护的人，你才能让自己的声音被更多的人所听到。</font></p></span></p>
+
+    
+    
+    <footer class="meta">
+      
       
       
     </footer>
