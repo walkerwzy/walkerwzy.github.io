@@ -93,7 +93,6 @@ article {
   box-shadow: 0 0 16px rgba(0,0,0,0.3);
   text-align: justify;
   position: relative;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -213,7 +212,6 @@ article .entry-content code {
   margin: 0 2px;
   font-size: 0.9em;
   border: 1px solid #d1d1d1;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 article .entry-content pre {
@@ -222,7 +220,6 @@ article .entry-content pre {
   margin-top: 15px;
   overflow: auto;
   padding: 7px 15px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 article .entry-content pre code {
@@ -230,7 +227,6 @@ article .entry-content pre code {
   padding: 0;
   margin: 0;
   border: none;
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 article .entry-content blockquote {
@@ -501,7 +497,6 @@ article .entry-content .sharing iframe {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: alpha(opacity=70);
   padding: 5px 15px;
-  -webkit-border-radius: 15px;
   border-radius: 15px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -553,7 +548,6 @@ article .entry-content .sharing iframe {
   box-shadow: 0 0 16px rgba(0,0,0,0.3);
   text-align: justify;
   position: relative;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 .archives:before {
@@ -647,7 +641,6 @@ article .entry-content .sharing iframe {
   border: none;
   margin-bottom: 0;
   overflow: visible;
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 #phasebeam {
@@ -723,7 +716,6 @@ article .entry-content .sharing iframe {
   border: 1px solid #ccc;
   margin-top: 15px;
   padding: 7px 15px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   text-shadow: 0 0 1px #fff;
   line-height: 1.6;
@@ -763,7 +755,6 @@ figure.highlight {
   border: 1px solid #ccc;
   margin-top: 15px;
   padding: 7px 15px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   text-shadow: 0 0 1px #fff;
   line-height: 1.6;
