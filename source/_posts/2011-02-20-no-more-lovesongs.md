@@ -7,8 +7,8 @@ tags: []
 published: true
 comments: true
 ---
-<p><img class="alignnone" title="no more lovesongs" src="http://t.douban.com/lpic/s2748837.jpg" alt="no more lovesongs" width="384" height="345" />
-<a href="http://ftp.luoo.net/radio/radio9/2.mp3"><img src="http://t.douban.com/lpic/s2748837.jpg" alt="" style="display:none;" /></a>No More Lovesongs<br />
+<p><img class="alignnone" title="no more lovesongs" src="https://img1.doubanio.com/lpic/s2750557.jpg" alt="no more lovesongs" width="384" height="345" />
+No More Lovesongs<br />
 最真诚的心做最纯粹的音乐，那些本该阴霾的情绪，却哼唱出了轻快的曲调，让人心醉<br />
 《No More Lovesongs》,选自Lacrosse的《This New Year Will Be For You And Me》</p>
 
