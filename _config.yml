@@ -67,7 +67,7 @@ disqus_shortname: walkerwzy
 ## Plugins: http://hexo.io/plugins/
 Plugins: [hexo-generator-feed]
 ## Themes: http://hexo.io/themes/
-theme: phase #landscape
+theme: cactus-dark # phase #landscape
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
