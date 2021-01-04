@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了Asynchronous I&#x2F;O operation failed (Failed to attach to completion port: Parameter incorrect. 87)相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一下">
+    <meta name="description" content="别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了Asynchronous I&#x2F;O operation failed (Failed to attach to completion port: Parameter incorrect. 87)相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flash media stream server错误解决">
 <meta property="og:url" content="http://walkerwzy.info/2009/08/15/flash-media-stream-server%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="Struggle">
-<meta property="og:description" content="别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了Asynchronous I&#x2F;O operation failed (Failed to attach to completion port: Parameter incorrect. 87)相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一下">
+<meta property="og:description" content="别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了Asynchronous I&#x2F;O operation failed (Failed to attach to completion port: Parameter incorrect. 87)相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一">
 <meta property="og:locale">
 <meta property="article:published_time" content="2009-08-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2014-02-26T17:51:52.000Z">
@@ -55,7 +55,124 @@
     
       <link rel="alternate" href="/atom.xml" title="Struggle" type="application/atom+xml" />
     
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body class="max-width mx-auto px3 ltr">
     
@@ -159,7 +276,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了<br />Asynchronous I/O operation failed (Failed to attach to completion port: Parameter incorrect. 87)<br /><br />相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一下你的防火墙先，是不是把1935端口挡住了，（假设你安装的时候没有更改端口，另外有的版本还默认了80端口）<br /><strong>解决方法一（不管原因，绕道解决）：</strong><br />1，打开安装目录下conf目录下的fms.ini文件，找到ADAPTOR.HOSTPORT，把80端口添加进去<br />2，直接在所有rtmp协议后面加个t，即变成rtmpt；<br />3，再次测试，成功<br />附，80端口大家都在抢，如果不想加，那么就这么使用rtmp://localhost/live=&gt;rtmpt://localhost:1935/live，我是通过了,<br />方法是死的，人是活的，写到这里应该明白根据自己的机器怎么去测试和修改了<br /><strong>解决方法二（只对本人而言）：</strong><br />不要忘了杀软也可能是帮凶，网上查了很多资料，其中有一个最大的罪魁祸首就是NOD32，假如你也碰到相同的问题，正好也在用NOD32，那么恭喜，可能你现在能解决了<br />打开NOD32，IMON，设定，其他，排除，把FMSEdge.exe写进去，基本上可以，笔者为了保险，同时把同目录下几个exe也全写进去了，<br />但跟踪端口，在我播放视频的时候确实只有FMSEdge有流量吞吐<br />此外还查到有人norton卸载了才能解决问题的，禁用什么的都无效，本人没用诺顿，所以不予评说，仅把其列出来作为您的参考<br />这种情况下，那个80端口也可以删掉，rtmp也不要改成rtmpt(用rtmpt据说速度会变慢，所以还是从根本解决的好)<br /><strong>解决方法三（官方）：</strong><br /><a target="_blank" rel="noopener" href="http://kb2.adobe.com/cps/402/kb402920.html">http://kb2.adobe.com/cps/402/kb402920.html</a><br />官方说明Note: It is possible that RTMPT and RTMPS connections work fine, even on identical ports. 但下面有更详细的原因及解决，建议点进去，但是那是推测的socket错误，并不符合我的情况，但可能您碰到的是这样</p>
+    <p>
+别人电脑和公司服务器全都成功了，就是我电脑不行，一直报下面这个错误，折腾好久，找到一点解决方法，反正把我自己的问题是解决了<br />Asynchronous I/O operation failed (Failed to attach to completion port: Parameter incorrect. 87)<br /><br />相信一般会上网来搜的人，都是查了自己了防火墙才来的，但是假如你确实忘记了检查，请查一下你的防火墙先，是不是把1935端口挡住了，（假设你安装的时候没有更改端口，另外有的版本还默认了80端口）<br /><strong>解决方法一（不管原因，绕道解决）：</strong><br />1，打开安装目录下conf目录下的fms.ini文件，找到ADAPTOR.HOSTPORT，把80端口添加进去<br />2，直接在所有rtmp协议后面加个t，即变成rtmpt；<br />3，再次测试，成功<br />附，80端口大家都在抢，如果不想加，那么就这么使用rtmp://localhost/live=&gt;rtmpt://localhost:1935/live，我是通过了,<br />方法是死的，人是活的，写到这里应该明白根据自己的机器怎么去测试和修改了<br /><strong>解决方法二（只对本人而言）：</strong><br />不要忘了杀软也可能是帮凶，网上查了很多资料，其中有一个最大的罪魁祸首就是NOD32，假如你也碰到相同的问题，正好也在用NOD32，那么恭喜，可能你现在能解决了<br />打开NOD32，IMON，设定，其他，排除，把FMSEdge.exe写进去，基本上可以，笔者为了保险，同时把同目录下几个exe也全写进去了，<br />但跟踪端口，在我播放视频的时候确实只有FMSEdge有流量吞吐<br />此外还查到有人norton卸载了才能解决问题的，禁用什么的都无效，本人没用诺顿，所以不予评说，仅把其列出来作为您的参考<br />这种情况下，那个80端口也可以删掉，rtmp也不要改成rtmpt(用rtmpt据说速度会变慢，所以还是从根本解决的好)<br /><strong>解决方法三（官方）：</strong><br /><a target="_blank" rel="noopener" href="http://kb2.adobe.com/cps/402/kb402920.html">http://kb2.adobe.com/cps/402/kb402920.html</a><br />官方说明Note: It is possible that RTMPT and RTMPS connections work fine, even on identical ports. 但下面有更详细的原因及解决，建议点进去，但是那是推测的socket错误，并不符合我的情况，但可能您碰到的是这样
+</p>
 
   </div>
 </article>
@@ -221,7 +340,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 walker
+    Copyright &copy; 2021 walker
   </div>
   <div class="footer-right">
     <nav>

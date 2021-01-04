@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。继续IE8的测试，IE8的三个新亮点">
+    <meta name="description" content="在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。继续IE8的测试，IE8的三个新亮">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IE8续">
 <meta property="og:url" content="http://walkerwzy.info/2008/03/06/ie8%E7%BB%AD/index.html">
 <meta property="og:site_name" content="Struggle">
-<meta property="og:description" content="在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。继续IE8的测试，IE8的三个新亮点">
+<meta property="og:description" content="在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。继续IE8的测试，IE8的三个新亮">
 <meta property="og:locale">
 <meta property="og:image" content="http://images.blogcn.com/2008/3/6/3/walkerwang,20080306151848703.png">
 <meta property="article:published_time" content="2008-03-05T16:00:00.000Z">
@@ -57,7 +57,124 @@
     
       <link rel="alternate" href="/atom.xml" title="Struggle" type="application/atom+xml" />
     
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body class="max-width mx-auto px3 ltr">
     
@@ -156,7 +273,9 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。<br />不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。<br /><br />继续IE8的测试，<br />IE8的三个新亮点：支持W3C标准，增加Webslices和Activites功能。<br />其中W3C估计会让一大批中文站点倒掉，强制它们按标准进行网页修改。当然微软作孽这么多年，轮到自己开始照标准行事的时候，也不能不有所顾忌地加上了“Emulate IE7”的按钮。。。<br />Webslices功能没发现有啥特别的，也没去试用，难道比Feeds先进些了？<br />Activites不错，可以直接把网页的内容发布到blog，地图，甚至翻译啊什么什么的，服务都可以自己添加。<br />下为Activites效果截图<br /><br /><img border="0" alt="20080306151815375" src="http://images.blogcn.com/2008/3/6/3/walkerwang,20080306151848703.png" width="505" height="388" /><br /><br /><br />很好，很强大，期待正式版。</p>
+    <p>
+在IE8本身里面不正常的功能居然都在the world里面正常使用。。。难道the world没用调用ieframe.dll？这篇日志也是我尝试性地打开The world看能不能编辑的时候发的。搞笑。。。<br />不过据使用发现，可能the world还只是实现了IE7（更可能是IE6）的基本功能，其它的都是自己做的，所以对于只是调用了IE的内核，应该不会产生太大的问题。<br /><br />继续IE8的测试，<br />IE8的三个新亮点：支持W3C标准，增加Webslices和Activites功能。<br />其中W3C估计会让一大批中文站点倒掉，强制它们按标准进行网页修改。当然微软作孽这么多年，轮到自己开始照标准行事的时候，也不能不有所顾忌地加上了“Emulate IE7”的按钮。。。<br />Webslices功能没发现有啥特别的，也没去试用，难道比Feeds先进些了？<br />Activites不错，可以直接把网页的内容发布到blog，地图，甚至翻译啊什么什么的，服务都可以自己添加。<br />下为Activites效果截图<br /><br /><img border="0" alt="20080306151815375" src="http://images.blogcn.com/2008/3/6/3/walkerwang,20080306151848703.png" width="505" height="388" /><br /><br /><br />很好，很强大，期待正式版。
+</p>
 
   </div>
 </article>
@@ -218,7 +337,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 walker
+    Copyright &copy; 2021 walker
   </div>
   <div class="footer-right">
     <nav>

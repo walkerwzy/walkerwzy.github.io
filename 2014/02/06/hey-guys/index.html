@@ -55,7 +55,124 @@
     
       <link rel="alternate" href="/atom.xml" title="Struggle" type="application/atom+xml" />
     
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body class="max-width mx-auto px3 ltr">
     
@@ -157,7 +274,7 @@
     <p>长期存在于<a target="_blank" rel="noopener" href="http://www.000webhost">三蛋空间</a>的我的年久失修的个人博客最近老被报CPU超标，两次被直接下线，于是转战了<a target="_blank" rel="noopener" href="http://www.youhosting.com">youhosting</a>，这是一个不错的空间，稳定，速度快，也没有那莫名其妙的cpu超标问题（同一个博客，同样的源码），但是人家志不在此，上线个把月后，youhosting礼貌地发来邮件，说我没有发展过一个客户，要把我的站停掉，问我接下来的计划，我也礼貌地回复，我会在页脚加一个推广链接，对方拒绝，于是，我又开始寻找别的免费托管服务。</p>
 <p>鉴于免费空间不靠谱，因此只有转向提供免费服务的应用发布平台，如GAE之类的(<code>python</code>)，还有appharbor(<code>.Net</code>)，heroku(<code>node.js</code>)等等一系列的（期间能直接托管ghost的kite也停掉了免费服务），始终觉得自己重写一套cms外加模板太麻烦，于是眼光又投向了github提供的静态页面托管服务，最终还是选择了这个octopress的方案。</p>
 <p>这是一个对码农的方案，如果你是一个码农，那么以下链接可能对你有用：</p>
-<ol>
+<ol type="1">
 <li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">什么是github pages和Jekyll</a></li>
 <li><a target="_blank" rel="noopener" href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/">什么是octopress</a></li>
 <li>最好了解下E文的<a target="_blank" rel="noopener" href="http://octopress.org/docs/setup/">官方文档</a>，当然跟上面的中文没差多少，我看文档的时候发现octopress已经可以直接发布到heroku，不一定局限在github了</li>
@@ -231,7 +348,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 walker
+    Copyright &copy; 2021 walker
   </div>
   <div class="footer-right">
     <nav>
