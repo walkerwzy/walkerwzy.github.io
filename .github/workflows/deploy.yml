@@ -25,7 +25,9 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm ci
 
       - name: Generate Static Files
         run: npx hexo generate
