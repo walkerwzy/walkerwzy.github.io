@@ -6,5 +6,8 @@ node_modules/
 public/
 .deploy/
 .deploy_git/
-source/lib
-themes/
+themes/cactus-dark-custom/
+themes/landscape/
+themes/next/
+themes/phase/
+themes/light/

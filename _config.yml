@@ -70,8 +70,7 @@ disqus_shortname: walkerwzy
 ## Plugins: http://hexo.io/plugins/
 Plugins: [hexo-generator-feed]
 ## Themes: http://hexo.io/themes/
-theme: cactus-dark # phase #landscape
-# theme: next
+theme: cactus-dark # phase #landscape # theme: next
 
 mathjax:
   tags: none # or 'ams' or 'all'
