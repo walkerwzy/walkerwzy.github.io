@@ -31,7 +31,10 @@ skip_render:
 new_post_name: :year-:month-:day-:title.md #:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enalbe: true
+  field: site
+  exclude: []
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -68,6 +71,16 @@ disqus_shortname: walkerwzy
 Plugins: [hexo-generator-feed]
 ## Themes: http://hexo.io/themes/
 theme: cactus-dark # phase #landscape
+# theme: next
+
+mathjax:
+  tags: none # or 'ams' or 'all'
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
