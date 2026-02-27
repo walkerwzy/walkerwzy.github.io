@@ -1,0 +1,33 @@
+name: Deploy Hexo
+
+on:
+  push:
+    branches:
+      - source
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: source
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Deploy
+        env:
+          HEXO_DEPLOY_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: npx hexo deploy
