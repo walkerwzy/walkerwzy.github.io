@@ -27,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm config set registry https://registry.npmjs.org/
-          npm ci
+          npm install --prefer-offline
 
       - name: Generate Static Files
         run: npx hexo generate
