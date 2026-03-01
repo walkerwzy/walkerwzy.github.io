@@ -1,0 +1,106 @@
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <%- partial('_partial/post/title', { post: page, index: false, class_name: 'posttitle' }) %>
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
+      </span>
+      <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
+    </div>
+  </header>
+  <%- partial('_partial/post/gallery') %>
+  <div class="content e-content" itemprop="articleBody">
+    <%- page.content %>
+  </div>
+</article>
+
+<!-- Photo Lightbox -->
+<style>
+.gallery-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+}
+.gallery-lightbox.active {
+  display: flex;
+}
+.gallery-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+.gallery-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+.gallery-lightbox-prev, .gallery-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+}
+.gallery-lightbox-prev { left: 20px; }
+.gallery-lightbox-next { right: 20px; }
+</style>
+
+<div class="gallery-lightbox" id="gallery-lightbox">
+  <span class="gallery-lightbox-close">&times;</span>
+  <span class="gallery-lightbox-prev">&#10094;</span>
+  <span class="gallery-lightbox-next">&#10095;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function() {
+  var lightbox = document.getElementById('gallery-lightbox');
+  var img = document.getElementById('lightbox-img');
+  var items = document.querySelectorAll('.gallery-item');
+  var current = 0;
+  
+  if (!items.length) return;
+  
+  items.forEach(function(item, i) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      current = i;
+      img.src = item.href;
+      lightbox.classList.add('active');
+    });
+  });
+  
+  lightbox.querySelector('.gallery-lightbox-close').addEventListener('click', function() {
+    lightbox.classList.remove('active');
+  });
+  
+  lightbox.querySelector('.gallery-lightbox-prev').addEventListener('click', function() {
+    current = (current - 1 + items.length) % items.length;
+    img.src = items[current].href;
+  });
+  
+  lightbox.querySelector('.gallery-lightbox-next').addEventListener('click', function() {
+    current = (current + 1) % items.length;
+    img.src = items[current].href;
+  });
+  
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+    if (e.key === 'ArrowLeft') current = (current - 1 + items.length) % items.length, img.src = items[current].href;
+    if (e.key === 'ArrowRight') current = (current + 1) % items.length, img.src = items[current].href;
+  });
+})();
+</script>
