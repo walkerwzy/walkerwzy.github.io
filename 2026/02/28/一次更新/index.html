@@ -14,7 +14,7 @@
 <meta property="og:description" content="突然想把这个荒废了好多年的博客的发布方式更新一下，不管以后会不会用，之前只能在本地编辑的方式局限太大，不在自己电脑的时候还得装环境，妥妥的劝退啊，也难怪慢慢地就没用了。 Hexo的理念是本地编辑，本地预览，本地生成和发布，所以面向的都是本地，不但存在我上面说的没有环境就干不了活的劝退问题，它的编辑分支（即源码）居然不默认上传，你换了台电脑不把目录拷过来，重新生成的话历史文章也全没了，看来从编写之初">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-02-28T16:00:53.000Z">
-<meta property="article:modified_time" content="2026-03-01T07:05:34.621Z">
+<meta property="article:modified_time" content="2026-03-01T07:26:54.936Z">
 <meta property="article:author" content="walker">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="github">
@@ -283,10 +283,11 @@ mjx-container[display="true"] + br {
 <p><code>Hexo</code>的理念是本地编辑，本地预览，本地生成和发布，所以面向的都是本地，不但存在我上面说的没有环境就干不了活的劝退问题，它的编辑分支（即源码）居然不默认上传，你换了台电脑不把目录拷过来，重新生成的话历史文章也全没了，看来从编写之初就只考虑了单机吧。</p>
 <p>这次把整个生成和发布的能力转到了<code>Github Actions</code>，任何地方只要具备往源码推送<code>markdown</code>文档的条件，就可以发布文章，而且触发节点变成了源码上传，这样保证了数据源唯一，而且也不需要依赖任何本地环境了。</p>
 <p>这是第一篇在线编辑（其实就是<code>Github</code>的<code>VS Code</code>模式下编辑）的文章，相比以前的工作流：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&#x27;title&#x27;</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-如果你想同步本地的源码（<code>Hexo</code>官方文档根本没提这档子事，但显然你应该这么做）的话，就要继续：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&#x27;title&#x27;</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure> 如果你想同步本地的源码（ Hexo
+官方文档根本没提这档子事，但显然你应该这么做）的话，就要继续：
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;new blog&#x27;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-现在你需要做的，就是后面这半截，码农很熟悉，这就是持续集成嘛，为毛<code>Hexo</code>不走这条路非得全本地呢？</p>
+现在你需要做的，就是后面这半截，码农很熟悉，这就是持续集成嘛，为毛 Hexo
+不走这条路非得全本地呢？</p>
 <hr />
 <p>我随手点开以前的文章，发现一个现象，大部分图片都消失了。这是正常的，我这个博客从2004年开始，见证了中国互联网博客圈的诞生繁荣和衰落，到最后以把历史数据导出给你收场，但是图片是不给你导的。</p>
 <p>拿着这些文字架设独立博客的时候，恰好图床的概念很火，因此又被中国互联网的另一阵风给坑了一把，我先后用过几个图床，直到最后一个，是七牛，这么大牌的服务，一样说关就关。中国互联网产品的责任感和信誉也就这样了。</p>
