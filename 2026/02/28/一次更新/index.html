@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="心念一动，突然想把这个荒废了好多年的博客平台更新一下，之前由于只能在本地编辑、生成和发布，非常不方便，慢慢地就没用了。借着Vibe Coding的东风，我让它给我升级了一下，只保留了hexo提供的从markdown文档生成静态页面的能力，交给Github Actions去做，再也不需要有本地环境才能写博客了（本来这种无后端的形式也不可能持久，前摇太长） 这是第一篇在线编辑（其实也还是Github的">
+    <meta name="description" content="突然想把这个荒废了好多年的博客的发布方式更新一下，不管以后会不会用，之前只能在本地编辑的方式局限太大，不在自己电脑的时候还得装环境，妥妥的劝退啊，也难怪慢慢地就没用了。 Hexo的理念是本地编辑，本地预览，本地生成和发布，所以面向的都是本地，不但存在我上面说的没有环境就干不了活的劝退问题，它的编辑分支（即源码）居然不默认上传，你换了台电脑不把目录拷过来，重新生成的话历史文章也全没了，看来从编写之初">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一次更新">
 <meta property="og:url" content="https://wzy.one/2026/02/28/%E4%B8%80%E6%AC%A1%E6%9B%B4%E6%96%B0/index.html">
 <meta property="og:site_name" content="Struggle">
-<meta property="og:description" content="心念一动，突然想把这个荒废了好多年的博客平台更新一下，之前由于只能在本地编辑、生成和发布，非常不方便，慢慢地就没用了。借着Vibe Coding的东风，我让它给我升级了一下，只保留了hexo提供的从markdown文档生成静态页面的能力，交给Github Actions去做，再也不需要有本地环境才能写博客了（本来这种无后端的形式也不可能持久，前摇太长） 这是第一篇在线编辑（其实也还是Github的">
+<meta property="og:description" content="突然想把这个荒废了好多年的博客的发布方式更新一下，不管以后会不会用，之前只能在本地编辑的方式局限太大，不在自己电脑的时候还得装环境，妥妥的劝退啊，也难怪慢慢地就没用了。 Hexo的理念是本地编辑，本地预览，本地生成和发布，所以面向的都是本地，不但存在我上面说的没有环境就干不了活的劝退问题，它的编辑分支（即源码）居然不默认上传，你换了台电脑不把目录拷过来，重新生成的话历史文章也全没了，看来从编写之初">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-02-28T16:00:53.000Z">
-<meta property="article:modified_time" content="2026-03-01T06:24:38.719Z">
+<meta property="article:modified_time" content="2026-03-01T06:48:49.656Z">
 <meta property="article:author" content="walker">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="github">
@@ -279,12 +279,17 @@ mjx-container[display="true"] + br {
   
 
   <div class="content e-content" itemprop="articleBody">
-    <p>心念一动，突然想把这个荒废了好多年的博客平台更新一下，之前由于只能在本地编辑、生成和发布，非常不方便，慢慢地就没用了。借着<code>Vibe Coding</code>的东风，我让它给我升级了一下，只保留了<code>hexo</code>提供的从<code>markdown</code>文档生成静态页面的能力，交给<code>Github Actions</code>去做，再也不需要有本地环境才能写博客了（本来这种无后端的形式也不可能持久，前摇太长）</p>
-<p>这是第一篇在线编辑（其实也还是<code>Github</code>的<code>VS Code</code>模式）的文章，相比以前的工作流：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&#x27;title&#x27;</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure> 现在确实方便多了，早干嘛去了</p>
+    <p>突然想把这个荒废了好多年的博客的发布方式更新一下，不管以后会不会用，之前只能在本地编辑的方式局限太大，不在自己电脑的时候还得装环境，妥妥的劝退啊，也难怪慢慢地就没用了。</p>
+<p><code>Hexo</code>的理念是本地编辑，本地预览，本地生成和发布，所以面向的都是本地，不但存在我上面说的没有环境就干不了活的劝退问题，它的编辑分支（即源码）居然不默认上传，你换了台电脑不把目录拷过来，重新生成的话历史文章也全没了，看来从编写之初就只考虑了单机吧。</p>
+<p>这次把整个生成和发布的能力转到了<code>Github Actions</code>，任何地方只要具备往源码推送<code>markdown</code>文档的条件，就可以发布文章，而且触发节点变成了源码上传，这样保证了数据源唯一，而且也不需要依赖任何本地环境了。</p>
+<p>这是第一篇在线编辑（其实就是<code>Github</code>的<code>VS Code</code>模式下编辑）的文章，相比以前的工作流：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&#x27;title&#x27;</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>现在是： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;new blog&#x27;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+貌似没省多少事，机制可是完全变了，现在是环境无关，数据源唯一，而且可以随时随地进行编辑和发布，这才是可持续发展的样子吧。</p>
 <hr />
-<p>我随手点开以前的文章，发现一个现象，所有的图片都消失了。首先，这是一个我从2004年以来就建立的博客，辗转各大<code>BSP</code>，图片肯定早没了，后来导出文章成为独立博客，也没想着把图片自己保存，用过好几个图床方案，其中最大牌是七牛的，现在纷纷折戟，无一幸存，中国互联网服务的生命力和可信度可见一斑。</p>
-<p>作为对比，以下是我在历史文章里找到的一个链接，<code>flickr</code>的图片，现在还能正常显示：</p>
+<p>我随手点开以前的文章，发现一个现象，大部分图片都消失了。这是正常的，我这个博客见证了中国互联网博客的诞生兴盛和衰落，到最后以把历史数据导出给你收场，但是图片是不给你导的。</p>
+<p>拿着这些文字架设独立博客的时候，恰好图床的概念很火，因此又被中国互联网的另一个跟风给坑了一把，我用过几个图床，直到最后一个，是七牛，这么大牌的服务，一样说关就关。中国互联网产品的责任感和信誉也就这样了。</p>
+<p>作为对比，以下是我在历史文章里找到的一个链接，<code>flickr</code>托管的图片，现在还能正常显示：</p>
 <figure>
 <img
 src="http://farm1.static.flickr.com/51/136720071_c88e1a82e8_z.jpg?zz=1"
