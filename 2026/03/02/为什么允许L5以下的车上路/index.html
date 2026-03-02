@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="前言 我一直对智能驾驶的看法很激进（或者说“激退“）的，核心观点是，在L5以下使用智驾：  人必须全程全身心参与驾驶，因为人的精力、注意力、反应速度不足以“突然”被机器叫过来准确获取路面情况并做出精确判断和精确的救车动作，并且时间窗口就那么几秒。 偏偏智驾级别越高，人越容易倦怠，没有人能在99%不需要人工介入的场景下还保持100%的参与度，也就是说大概率下事故发生时，人都是不在状态的。  这是无解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么允许L5以下的车上路">
+<meta property="og:url" content="https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/index.html">
+<meta property="og:site_name" content="Struggle">
+<meta property="og:description" content="前言 我一直对智能驾驶的看法很激进（或者说“激退“）的，核心观点是，在L5以下使用智驾：  人必须全程全身心参与驾驶，因为人的精力、注意力、反应速度不足以“突然”被机器叫过来准确获取路面情况并做出精确判断和精确的救车动作，并且时间窗口就那么几秒。 偏偏智驾级别越高，人越容易倦怠，没有人能在99%不需要人工介入的场景下还保持100%的参与度，也就是说大概率下事故发生时，人都是不在状态的。  这是无解">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-03-02T22:08:56.000Z">
+<meta property="article:modified_time" content="2026-03-02T15:24:18.826Z">
+<meta property="article:author" content="walker">
+<meta property="article:tag" content="自动驾驶">
+<meta property="article:tag" content="L5智驾">
+<meta property="article:tag" content="监控者困境">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>为什么允许L5以下的车上路</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/screen">Screen</a></li><!--
+     --><!--
+       --><li><a href="/categories/image">Image</a></li><!--
+     --><!--
+       --><li><a href="/categories/music">Music</a></li><!--
+     --><!--
+       --><li><a href="/categories/thoughts">Emotion</a></li><!--
+     --><!--
+       --><li><a href="/categories/default">Mess</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/03/02/%E5%A4%A7%E5%9E%8B%E4%BC%81%E4%B8%9A%E8%A3%81%E5%91%98%E7%9A%84%E4%B8%8D%E6%AD%A3%E4%B9%89%E4%B8%8E%E5%95%86%E4%B8%9A%E7%8E%B0%E5%AE%9E/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&text=为什么允许L5以下的车上路"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&is_video=false&description=为什么允许L5以下的车上路"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=为什么允许L5以下的车上路&body=Check out this article: https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&name=为什么允许L5以下的车上路&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&t=为什么允许L5以下的车上路"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai"><span class="toc-number">2.</span> <span class="toc-text">AI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%82%AF%E5%AE%9A%E4%BD%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B4%9E%E5%AF%9F"><span class="toc-number">2.1.</span> <span class="toc-text">肯定你的核心洞察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9l5%E4%BB%A5%E4%B8%8B%E4%B8%8D%E5%BA%94%E5%90%88%E6%B3%95%E4%B8%8A%E8%B7%AF%E7%9A%84%E6%8E%A2%E8%AE%A8"><span class="toc-number">2.2.</span> <span class="toc-text">对“L5以下不应合法上路”的探讨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E7%8E%B0%E5%AE%9E%E7%90%86%E6%83%B3%E4%B8%8E%E6%A1%A5%E6%A2%81"><span class="toc-number">2.3.</span> <span class="toc-text">总结：现实、理想与桥梁</span></a></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        为什么允许L5以下的车上路
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">walker</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-03-02T22:08:56.000Z" class="dt-published" itemprop="datePublished">2026-03-02</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/L5%E6%99%BA%E9%A9%BE/" rel="tag">L5智驾</a>, <a class="p-category" href="/tags/%E7%9B%91%E6%8E%A7%E8%80%85%E5%9B%B0%E5%A2%83/" rel="tag">监控者困境</a>, <a class="p-category" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" rel="tag">自动驾驶</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="前言">前言</h2>
+<p>我一直对智能驾驶的看法很激进（或者说“激退“）的，核心观点是，在L5以下使用智驾：</p>
+<ol type="1">
+<li>人必须全程全身心参与驾驶，因为人的精力、注意力、反应速度不足以“突然”被机器叫过来<code>准确获取路面情况</code>并<code>做出精确判断</code>和<code>精确的救车动作</code>，并且<strong>时间窗口</strong>就那么几秒。</li>
+<li>偏偏智驾级别越高，人越容易倦怠，没有人能在99%不需要人工介入的场景下还保持100%的参与度，也就是说大概率下事故发生时，人都是不在状态的。</li>
+</ol>
+<p>这是无解的。只有拿工资去监管和测试的上路试驾员，才能在基本不需要人工介入的情况下保持100%的专注，因为这是他的工作内容，付费对抗走神。更别说即使是这种情况，其实也是没法保证各种摸鱼的。</p>
+<p>更别说，普通消费者认识不足，以为L2到L5只是不同的智力阶段，再加上车企营销的推波助澜，各种脱手脱眼享受惬意驾驶体验的不负责暗示，以及层出不穷的装逼犯，这堆人加一起，路上有几个人是冲着<strong>我要全程监管</strong>去买L3,L4的车的？</p>
+<p>因此，我总认为，L5以前，就不应该允许上路</p>
+<blockquote>
+<p>至于到了L5，这又是另一个更严峻的话题：个人又没必要买车了，这个我几年前倒是写过一篇<a
+href="https://wzy.one/2022/09/07/我对未来出行的看法/">粗浅的文章</a>畅想过，很多事没想清就写出来了，不过几个基本观点不会变，包括：</p>
+<p>面向个人的汽车市场没有了，你也没地方修车了，你不需要买保险了，修车信息差也没有了（以换代修的现象直接消失了），你不需要停车也没必要买车位了之类的，有空我再喂进AI看看他们的看法。</p>
+</blockquote>
+<p>回到L5以下该不该上路的问题，我跟AI探讨了下，因为这些争论肯定早就在他们的训练知识库里了，撇去站队和利益冲突，可以直接提炼汽车业内、监管者和公众的观点，而且还会先拍你一通彩虹屁，讲点不同意见也容易接受些嘛，以下是deepseek的回复：</p>
+<h2 id="ai">AI</h2>
+<p>我理解你提出的质疑非常深刻，并且直指当前自动驾驶发展中最核心、最尖锐的矛盾。这不是一个简单的技术问题，而是一个涉及<strong>人性、责任、法律和商业伦理的复杂系统性问题</strong>。</p>
+<p>你的推理在很多方面是成立的，特别是关于“<code>监控悖论</code>”和“<code>接管不现实</code>”这两点，这正是全球监管机构和行业内部正在<strong>激烈辩论</strong>的焦点。</p>
+<h3 id="肯定你的核心洞察">肯定你的核心洞察</h3>
+<ol type="1">
+<li><strong>关于“反人性的要求”</strong>：你的观察完全正确。要求驾驶员在系统表现良好时保持高度警觉，这在心理学上被称为“<strong>监控者困境</strong>”，是人类不擅长的任务。车企的宣传和用户的实际使用（追求轻松）确实存在根本矛盾。大量研究证明，人类的注意力在“无事可做”时必然会衰减。</li>
+<li><strong>关于“接管是甩锅方案”</strong>：这确实是当前L2/L3系统设计中最受诟病的一点。从系统发出接管请求（往往只有几秒到十几秒），到一个可能正在看手机、打瞌睡的驾驶员重新理解复杂路况、做出正确决策并执行操作，<strong>整个过程极不可靠</strong>。许多业内人士也私下承认，这很大程度上是将<strong>责任和法律风险转移给了人类驾驶员</strong>。</li>
+</ol>
+<h3 id="对l5以下不应合法上路的探讨">对“L5以下不应合法上路”的探讨</h3>
+<p>你的结论——“L5以下只能由专业试车员测试，不应合法上路”——是一个逻辑上严谨但实践上非常颠覆性的观点。我们可以从几个层面来探讨为何现实世界没有采用这种“绝对安全”的路径：</p>
+<ol type="1">
+<li><strong>技术进化的必要路径</strong>：自动驾驶无法在封闭场景中“学会”应对真实世界的全部长尾问题（如极端天气、复杂交通参与者行为等）。<strong>有限度的公共道路测试和用户使用，是系统迭代进化的核心数据来源</strong>。完全禁止，意味着技术将永远停留在实验室。</li>
+<li><strong>社会与法规的渐进性</strong>：交通法规本质上是一种<strong>风险管理工具</strong>，而非追求零风险。传统汽车也从未达到“零事故”。监管机构（如美国NHTSA、中国工信部）的评估逻辑，确实是<strong>在比较“引入智能驾驶后的安全净效益”</strong>。如果数据显示，一个有缺陷但被监督的辅助驾驶系统，其整体事故率低于纯人类驾驶，那么从公共安全统计学的角度，允许它上路就有其<strong>合理性</strong>。这确实是你在“<em>当权者是把人命当作可量化的棋子</em>”那段话中描述的逻辑。</li>
+<li><strong>权责划分的探索</strong>：你提到的“唯一措施可能就是主动监测驾驶员”，这正是当前法规演进的核心方向。全球趋势是<strong>通过强制性的驾驶员监控系统来“强制执行”你的注意力</strong>：
+<ul>
+<li><strong>技术手段</strong>：舱内摄像头监测眼球和头部姿态、扭矩感应方向盘等，一旦分神就发出警告直至强制停车。</li>
+<li><strong>法律手段</strong>：明确在L2/L3级别下，<strong>驾驶员是第一责任人</strong>。事故发生后，调查首先会看驾驶员是否处于合规监控状态。这虽然不是完美的“技术方案”，但确实是现阶段在鼓励创新和保障安全之间的一种<strong>权责界定和风险分配方案</strong>。</li>
+</ul></li>
+<li><strong>商业与社会的接受过程</strong>：彻底禁止L5以下系统，将<strong>立刻摧毁一个巨大的产业</strong>，并剥夺用户已经习惯的便利性（如ACC自适应巡航），这在政治和经济上不可行。因此，政策选择了一条
+<strong>“带着镣铐跳舞”</strong>
+的路径：允许使用，但通过越来越严格的监控和法规来约束，并逐步向高等级过渡。</li>
+</ol>
+<h3 id="总结现实理想与桥梁">总结：现实、理想与桥梁</h3>
+<p>所以，你的想法并非错误，而是提出了一种
+<strong>“理想状态的安全门槛”</strong> 。现实世界的做法则是：</p>
+<p><strong>承认一个不完美的过渡阶段必然存在，并用技术监控、法律界定和责任划分来管理这个阶段的风险，以期最终达到L4/L5的理想状态。</strong></p>
+<p>这确实可能像一场“社会实验”，而每个用户都在参与其中。你犀利地指出了这场实验中最脆弱的环节——人性的弱点。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/categories/screen">Screen</a></li>
+        
+          <li><a href="/categories/image">Image</a></li>
+        
+          <li><a href="/categories/music">Music</a></li>
+        
+          <li><a href="/categories/thoughts">Emotion</a></li>
+        
+          <li><a href="/categories/default">Mess</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai"><span class="toc-number">2.</span> <span class="toc-text">AI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%82%AF%E5%AE%9A%E4%BD%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E6%B4%9E%E5%AF%9F"><span class="toc-number">2.1.</span> <span class="toc-text">肯定你的核心洞察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9l5%E4%BB%A5%E4%B8%8B%E4%B8%8D%E5%BA%94%E5%90%88%E6%B3%95%E4%B8%8A%E8%B7%AF%E7%9A%84%E6%8E%A2%E8%AE%A8"><span class="toc-number">2.2.</span> <span class="toc-text">对“L5以下不应合法上路”的探讨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E7%8E%B0%E5%AE%9E%E7%90%86%E6%83%B3%E4%B8%8E%E6%A1%A5%E6%A2%81"><span class="toc-number">2.3.</span> <span class="toc-text">总结：现实、理想与桥梁</span></a></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&text=为什么允许L5以下的车上路"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&is_video=false&description=为什么允许L5以下的车上路"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=为什么允许L5以下的车上路&body=Check out this article: https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&title=为什么允许L5以下的车上路"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&name=为什么允许L5以下的车上路&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://wzy.one/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/&t=为什么允许L5以下的车上路"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2004-2026
+    walker
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/screen">Screen</a></li><!--
+     --><!--
+       --><li><a href="/categories/image">Image</a></li><!--
+     --><!--
+       --><li><a href="/categories/music">Music</a></li><!--
+     --><!--
+       --><li><a href="/categories/thoughts">Emotion</a></li><!--
+     --><!--
+       --><li><a href="/categories/default">Mess</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
