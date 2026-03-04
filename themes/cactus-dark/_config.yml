@@ -40,17 +40,17 @@ social_links:
     label: 技术博客
     icon: facebook
     link: https://blog.wzy.one
-  -
-    icon: mail
-    link: mailto:walker.wzy@gmail.com
-  -
-    icon: mastodon
-    label: mastodon.social
-    link: /
-  -
-    icon: mastodon
-    label: fosstodon.org
-    link: /
+  # -
+  #   icon: mail
+  #   link: mailto:walker.wzy@gmail.com
+  # -
+  #   icon: mastodon
+  #   label: mastodon.social
+  #   link: /
+  # -
+  #   icon: mastodon
+  #   label: fosstodon.org
+  #   link: /
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
