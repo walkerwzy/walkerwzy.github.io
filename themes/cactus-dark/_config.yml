@@ -33,11 +33,13 @@ social_links:
     icon: github
     link: https://github.com/walkerwzy
   -
-    icon: twitter
-    link: /
+    # icon: twitter
+    icon: 知识库
+    link: https://note.wzy.one
   -
-    icon: facebook
-    link: /
+    # icon: facebook
+    icon: 技术博客
+    link: https://blog.wzy.one
   -
     icon: mail
     link: mailto:walker.wzy@gmail.com
