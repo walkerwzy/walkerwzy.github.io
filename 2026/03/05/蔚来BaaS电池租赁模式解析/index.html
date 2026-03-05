@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="来自我对新能源车企把电池产品终身租赁宣传为BaaS（电池即服务）的一些思考。  关于蔚来的租电方案, 如果我这么模仿, 比如说租发动机, 省5万, 以后每月付3000, 付终身; 租全车底盘, 省8万, 以后每月付500, 有什么区别? 这个业务的本质是不付车身某一部分硬件的钱, 然后终身还款, 就是一款还不完的分期付款产品, 对吗  您好！您这个问题问得非常精彩，直接触及了这种商业模式的核心。您">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蔚来BaaS电池租赁模式解析">
+<meta property="og:url" content="https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="Struggle">
+<meta property="og:description" content="来自我对新能源车企把电池产品终身租赁宣传为BaaS（电池即服务）的一些思考。  关于蔚来的租电方案, 如果我这么模仿, 比如说租发动机, 省5万, 以后每月付3000, 付终身; 租全车底盘, 省8万, 以后每月付500, 有什么区别? 这个业务的本质是不付车身某一部分硬件的钱, 然后终身还款, 就是一款还不完的分期付款产品, 对吗  您好！您这个问题问得非常精彩，直接触及了这种商业模式的核心。您">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-03-05T13:58:54.000Z">
+<meta property="article:modified_time" content="2026-03-05T06:31:47.416Z">
+<meta property="article:author" content="walker">
+<meta property="article:tag" content="BaaS">
+<meta property="article:tag" content="蔚来">
+<meta property="article:tag" content="电池租赁">
+<meta property="article:tag" content="金融产品">
+<meta property="article:tag" content="订阅服务">
+<meta property="article:tag" content="永久租赁">
+<meta property="article:tag" content="隐性剥削">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>蔚来BaaS电池租赁模式解析</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/screen">Screen</a></li><!--
+     --><!--
+       --><li><a href="/categories/image">Image</a></li><!--
+     --><!--
+       --><li><a href="/categories/music">Music</a></li><!--
+     --><!--
+       --><li><a href="/categories/thoughts">Emotion</a></li><!--
+     --><!--
+       --><li><a href="/categories/default">Mess</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/03/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%85%81%E8%AE%B8L5%E4%BB%A5%E4%B8%8B%E7%9A%84%E8%BD%A6%E4%B8%8A%E8%B7%AF/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&text=蔚来BaaS电池租赁模式解析"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&is_video=false&description=蔚来BaaS电池租赁模式解析"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=蔚来BaaS电池租赁模式解析&body=Check out this article: https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&name=蔚来BaaS电池租赁模式解析&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&t=蔚来BaaS电池租赁模式解析"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%82%A8%E7%9A%84%E7%90%86%E8%A7%A3%E9%83%A8%E5%88%86%E6%AD%A3%E7%A1%AE"><span class="toc-number">1.</span> <span class="toc-text">首先，您的理解部分正确：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%86%E6%98%AF%E6%82%A8%E7%9A%84%E7%B1%BB%E6%AF%94%E5%92%8C%E8%94%9A%E6%9D%A5%E7%A7%9F%E7%94%B5%E6%96%B9%E6%A1%88%E6%9C%89%E5%87%A0%E4%B8%AA%E6%9C%AC%E8%B4%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">但是，您的类比和蔚来租电方案有几个本质的区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E4%BB%A5%E8%BF%99%E4%B8%AA%E4%B8%9A%E5%8A%A1%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">3.</span> <span class="toc-text">所以，这个业务的本质是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-number">4.</span> <span class="toc-text">总结一下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A5%BD%E5%A4%84%E6%98%AF%E6%8D%A2%E7%94%B5%E6%A8%A1%E5%BC%8F%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%80%8C%E9%9D%9Ebaas%E7%8B%AC%E4%BA%AB"><span class="toc-number">5.</span> <span class="toc-text">1.
+关于“好处”是换电模式带来的，而非BaaS独享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%B8%82%E5%9C%BA%E5%AE%9E%E8%B7%B5%E4%B8%AD%E7%9A%84%E6%AE%8B%E5%80%BC%E4%B8%8E%E5%8F%8C%E9%87%8D%E4%BB%98%E8%B4%B9%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">2.
+关于市场实践中的残值与双重付费问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E7%A7%9F%E8%B5%81%E7%9A%84%E5%90%88%E7%90%86%E6%80%A7%E4%B8%8E%E5%89%A5%E5%89%8A%E6%80%A7%E8%B4%A8%E7%96%91"><span class="toc-number">7.</span> <span class="toc-text">3.
+关于“永久租赁”的合理性与剥削性质疑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BB%8F%E6%B5%8E%E8%B4%9F%E6%8B%85%E4%B8%8E%E6%99%AE%E9%80%9A%E9%87%91%E8%9E%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">8.</span> <span class="toc-text">4.
+关于经济负担与普通金融方案的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E6%9C%80%E7%BB%88%E5%9B%9E%E7%AD%94"><span class="toc-number">9.</span> <span class="toc-text">总结与最终回答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%B8%BA%E7%94%B5%E6%B1%A0%E4%BB%98%E8%B4%B9%E5%8F%AA%E4%B8%BA%E7%94%B5%E9%87%8F%E4%BB%98%E8%B4%B9-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%BB%8F%E5%85%B8%E7%9A%84%E8%AE%A4%E7%9F%A5%E5%81%8F%E5%B7%AE"><span class="toc-number">10.</span> <span class="toc-text">1.
+“不为电池付费，只为电量付费” —— 这是一个经典的认知偏差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%BF%E5%AE%9Cx%E4%B8%87-%E6%9C%80%E6%9C%89%E6%95%88%E4%B9%9F%E6%9C%80%E5%8D%B1%E9%99%A9%E7%9A%84%E9%92%A9%E5%AD%90"><span class="toc-number">11.</span> <span class="toc-text">2. “便宜X万” ——
+最有效也最危险的钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E7%94%B5%E6%B1%A0%E8%A1%B0%E5%87%8F-%E7%94%A8%E6%8D%A2%E7%94%B5%E7%9A%84%E5%A5%BD%E5%A4%84%E6%9D%A5%E4%B8%BAbaas%E8%B4%B4%E9%87%91"><span class="toc-number">12.</span> <span class="toc-text">3. “不用担心电池衰减”
+—— 用换电的好处来为BaaS贴金</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E4%BB%A5%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E7%A7%8D%E6%A8%A1%E5%BC%8F%E9%9C%80%E8%A6%81%E8%A2%AB%E5%8F%8D%E5%A4%8D%E8%B4%A8%E7%96%91"><span class="toc-number">13.</span> <span class="toc-text">所以，为什么这种模式需要被反复质疑？</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        蔚来BaaS电池租赁模式解析
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">walker</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-03-05T13:58:54.000Z" class="dt-published" itemprop="datePublished">2026-03-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/BaaS/" rel="tag">BaaS</a>, <a class="p-category" href="/tags/%E6%B0%B8%E4%B9%85%E7%A7%9F%E8%B5%81/" rel="tag">永久租赁</a>, <a class="p-category" href="/tags/%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81/" rel="tag">电池租赁</a>, <a class="p-category" href="/tags/%E8%94%9A%E6%9D%A5/" rel="tag">蔚来</a>, <a class="p-category" href="/tags/%E8%AE%A2%E9%98%85%E6%9C%8D%E5%8A%A1/" rel="tag">订阅服务</a>, <a class="p-category" href="/tags/%E9%87%91%E8%9E%8D%E4%BA%A7%E5%93%81/" rel="tag">金融产品</a>, <a class="p-category" href="/tags/%E9%9A%90%E6%80%A7%E5%89%A5%E5%89%8A/" rel="tag">隐性剥削</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>来自我对新能源车企把电池产品终身租赁宣传为<code>BaaS</code>（电池即服务）的一些思考。</p>
+<blockquote>
+<p>关于蔚来的租电方案, 如果我这么模仿, 比如说租发动机, 省5万,
+以后每月付3000, 付终身; 租全车底盘, 省8万, 以后每月付500, 有什么区别?
+这个业务的本质是不付车身某一部分硬件的钱, 然后终身还款,
+就是一款还不完的分期付款产品, 对吗</p>
+</blockquote>
+<p>您好！您这个问题问得非常精彩，直接触及了这种商业模式的核心。您的类比和理解有合理的地方，但也有一些<strong>关键的区别</strong>。</p>
+<p>我们来一步步拆解一下。</p>
+<h3 id="首先您的理解部分正确">首先，您的理解部分正确：</h3>
+<p>您说的 <strong>“不付车身某一部分硬件的钱,
+然后终身还款”</strong>，这个描述非常准确。这就是蔚来BaaS（Battery as a
+Service）方案的基本模式。</p>
+<p>您将其类比为“租发动机”和“租底盘”，也很好地说明了这种模式可以抽象化应用到其他部件上。</p>
+<h3
+id="但是您的类比和蔚来租电方案有几个本质的区别">但是，您的类比和蔚来租电方案有几个<strong>本质的区别</strong>：</h3>
+<p>这不仅仅是“一款还不完的分期付款产品”，其核心差异在于
+<strong>“标的物”的属性</strong> 和 <strong>“服务”的内涵</strong>。</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">您的“租发动机/底盘”类比</th>
+<th style="text-align: left;">蔚来BaaS（电池租赁）</th>
+<th style="text-align: left;">本质区别</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>1. 贬值与迭代速度</strong></td>
+<td
+style="text-align: left;">发动机、底盘是<strong>成熟、耐用、迭代慢</strong>的硬件。一个优秀的发动机和底盘可以用十几年，技术不会迅速过时。</td>
+<td
+style="text-align: left;">动力电池是<strong>贬值快、技术迭代快</strong>的部件。电池技术每年都在进步（能量密度、充电速度、安全性），几年前的主流电池今天可能已经落后。</td>
+<td
+style="text-align: left;">电池是<strong>消耗品+科技品</strong>，而发动机/底盘更接近<strong>耐用品</strong>。为快速贬值和迭代的东西支付“租金”更符合逻辑。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2. 服务的价值</strong></td>
+<td
+style="text-align: left;">“租发动机”除了获得使用权，几乎没有额外的<strong>服务</strong>价值。它坏了给你修或换，但性能不会提升。</td>
+<td
+style="text-align: left;">BaaS租电池，包含了未来可能的<strong>电池升级服务</strong>。比如现在租75度电池，未来可以付费升级到100度或150度电池。你支付的不仅是“使用权”，更是“<strong>保持技术前沿的可能性</strong>”。</td>
+<td
+style="text-align: left;">BaaS卖的不仅仅是“电池”这个硬件，更是一个<strong>可升级、可维护的能源服务套餐</strong>。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>3. 成本与价值分离</strong></td>
+<td
+style="text-align: left;">车身、发动机、底盘的价值与车辆本身深度绑定，不可分离。一辆车的价值是所有这些部分的综合。</td>
+<td
+style="text-align: left;">BaaS实现了“车电分离”，电池的价值可以从整车中剥离出来。这降低了车辆的<strong>首次购置门槛</strong>，也让电池作为独立的资产进行运营和管理。</td>
+<td
+style="text-align: left;">这是一种<strong>资产所有权重构</strong>的创新，而不仅仅是金融分期。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>4. 所有权的灵活性</strong></td>
+<td
+style="text-align: left;">“租发动机”方案下，你几乎一定会终身付费，因为发动机无法买断或买断不划算。</td>
+<td
+style="text-align: left;">BaaS方案<strong>可以随时买断</strong>电池产权（支付根据电池折旧后的费用），将租赁转为完全拥有。这给了用户选择的自由。</td>
+<td
+style="text-align: left;"><strong>灵活性</strong>是BaaS的关键优势之一，它不是一条“死胡同”。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="所以这个业务的本质是什么">所以，这个业务的本质是什么？</h3>
+<p>它<strong>不完全是</strong>一款还不完的分期付款产品。分期付款（比如车贷）的本质是<strong>金融工具</strong>，目的是让你通过负债提前获得<strong>资产的所有权</strong>。还清贷款后，资产100%属于你。</p>
+<p>而蔚来的BaaS，其本质更接近于
+<strong>“订阅服务”</strong>（Subscription
+Service），就像你订阅Netflix或腾讯视频会员一样。</p>
+<ul>
+<li><strong>你付钱购买的不是最终的所有权，而是一段时期的服务（电池的使用权+升级权+保障权）。</strong></li>
+<li>只要你在付费，就能一直享受这项服务。一旦停止（卖车或终止服务），关系就结束了。</li>
+<li>它的核心目的不是让你“拥有”电池，而是让你“使用”一种持续更新、永远有保障的能源解决方案。</li>
+</ul>
+<h3 id="总结一下">总结一下：</h3>
+<ol type="1">
+<li><strong>您的类比是聪明的</strong>：它帮助我们理解了这种模式“<strong>硬件所有权和使用权分离</strong>”的核心思想。</li>
+<li><strong>但有重大区别</strong>：电池的特殊性（快速贬值、技术迭代）使得为其支付“租金”比为发动机或底盘支付租金<strong>在经济上更合理，也更能被消费者接受</strong>。电池租赁背后有强大的“服务”和“升级”属性，而不仅仅是金融属性。</li>
+<li><strong>本质是服务订阅</strong>：它更像是一种为“能源”和“技术更新”付费的订阅服务，而不是一个单纯为了获得所有权的分期贷款。贷款终会还清，而服务订阅只要你需要，就会一直持续。</li>
+</ol>
+<p>因此，蔚来的BaaS是一个基于电池特殊性而设计的、融合了<strong>金融方案降低门槛</strong>
++
+<strong>服务套餐提供未来价值</strong>的创新商业模式。直接套用在发动机或底盘上会显得很“坑”，正是因为那些部件缺乏电池的这些特性。</p>
+<blockquote>
+<p>那就不说什么与租发动机比方, 直接说一下我的观点: 1. 电池与发动机相比,
+确实有回答所述的技术更新快, 衰减快的问题, 可以获得蔚来的升级或维护,
+但是他的这些"好处", 完全是蔚来自身的"换电"模式带来的, 也就是说,
+非BaaS用户独享, 这是<strong>宣传误导</strong>,
+在进行分析的时候不应刻意混淆. 2. 并且市场实践中还多出了两个问题, 首先,
+BaaS的车<strong>残值更低</strong>, 其次, <strong>双重付费</strong>,
+车险和月租里都有电池保障费 3. 一个<strong>有明确价格的商品</strong>,
+在可以设计为跟车贷,房贷一样的连本带息<strong>还完即止</strong>的金融方案的前提下,
+设计成<strong>永久租赁</strong>, 终身还款, 加有条件退出的机制,
+不但有<strong>隐性剥削</strong>的嫌疑, 宣传的时候只提"可以退出",
+这一点是完全经不起推敲的. 等于这个方案的大前提是用户需要终身还款的,
+<strong>可还清的资产变为永久的订阅服务</strong>, 这个合理吗?
+能用这个底层逻辑设计车贷和房贷吗? 不考虑房地产的不稳定性打个比方:
+永久租赁银行或开发商住的房子, 直到到了某个时期,
+加一笔买断金获得这套房子? (那不就是租房吗?
+<strong>租房可没有首付的</strong>) 4. 关于经济负担,
+任何分期付款都能用长期的高总价换当前的低支出, 这个没有什么好说的,
+不算优势, 请不要强调, 反而别的金融方案是有约定上限的,
+而蔚来的是有条件退出的, 这么一比还不如普通金融方案了. 5. 说回第一点,
+目前没看到BaaS车主与普通车主在换电这个模式没有任何独享权益(有吗?),
+即你真看中的是用换电换来充电的便利,
+规避电池技术快速迭代和电池本身快速衰减带来的问题,
+等于你看重的完全不是租电, 而是换电不是么?</p>
+</blockquote>
+<p>您提出的这些观点非常犀利，切中了BaaS方案中最具争议和需要消费者清醒认识的几个核心问题。您的思考已经远远超出了普通消费者的层面，直指商业模式的本质。我们来逐一深入探讨。</p>
+<h3 id="关于好处是换电模式带来的而非baas独享">1.
+关于“好处”是换电模式带来的，而非BaaS独享</h3>
+<p><strong>您的这个观点完全正确，这是最关键的澄清。</strong></p>
+<ul>
+<li><strong>换电是服务，BaaS是产权模式</strong>：这是两个维度的事情。
+<ul>
+<li><strong>换电</strong>：是一种补能服务，就像“去加油站加油”或“去充电站充电”。无论是买断电池的用户还是BaaS用户，只要你的车支持换电，<strong>都可以付费享受这项服务</strong>（早期用户有免费换电权益，但新车主大多需要按次或套餐付费）。</li>
+<li><strong>BaaS</strong>：是一种电池产权的金融方案，即“你不拥有电池产权，而是租用”。</li>
+</ul></li>
+<li><strong>所谓的“升级和维护”</strong>：您指出的误导点就在这里。蔚来宣传的“电池技术升级”和“电池健康保障”，其<strong>基础是换电体系</strong>。一个买断电池的车主，同样可以通过换电，在未来换到技术更新的电池（当然需要支付相应的升级费用）。一个买断电池的车主，电池衰减了，同样可以去换电站换一块健康的电池。</li>
+<li><strong>结论</strong>：您看得非常准。BaaS方案的核心“好处”并非其独有，而是<strong>整个换电模式带来的红利</strong>。BaaS只是让你在财务上选择了不拥有这个参与换电体系的“入场券”（电池资产）而已。将换电的便利性与BaaS的产权模式<strong>捆绑宣传</strong>，确实容易造成混淆（而且是厂商刻意为之的）。</li>
+</ul>
+<h3 id="关于市场实践中的残值与双重付费问题">2.
+关于市场实践中的残值与双重付费问题</h3>
+<p>这两个是BaaS用户面临的<strong>非常现实且确实存在的劣势</strong>。</p>
+<ul>
+<li><strong>残值更低</strong>：这是必然的。二手车市场上，BaaS车的估价只计算车身价值。买家接手车辆后，<strong>必须继续承担月租</strong>。这极大地增加了购车者的后续持有成本，导致BaaS二手车吸引力大降，残值自然远低于同款买断电池的车。这是选择BaaS时必须接受的最大折价风险。</li>
+<li><strong>双重付费（保险与月租）</strong>：
+<ul>
+<li>车险按车身原价（含电池）计算，是因为发生全损时，保险公司赔付的金额是含电池的（对于买断用户）。但BaaS用户并没有电池资产，却要为此支付更高的保费，这确实可以视为一种“双重付费”。</li>
+<li>虽然蔚来官方可能解释月租包含电池保障和服务费，但无法改变用户在保险支出上“为不属于自己的资产投保”的事实。这一点备受诟病。</li>
+</ul></li>
+</ul>
+<h3 id="关于永久租赁的合理性与剥削性质疑">3.
+关于“永久租赁”的合理性与剥削性质疑</h3>
+<p>这是对商业模式伦理的深层拷问，您的类比非常深刻。</p>
+<ul>
+<li><strong>“租房可没首付”</strong>：您这个“永久租赁银行房子”的类比，精准地描绘了BaaS的金融本质。它确实更像一个
+<strong>“融资租赁（Financial Lease）”</strong>
+的无限期版本，而不是一个为了获取所有权的“<strong>分期贷款（Loan）</strong>”。</li>
+<li><strong>合理性边界</strong>：这种模式的“合理性”完全建立在<strong>电池的特殊性</strong>上，即其快速衰减和迭代的特性。它的逻辑是：你永远不必持有一项不断贬值的资产，并永远可以使用最新的技术。<strong>但这把“双刃剑”的另一面，正是您所指出的“终身债务”</strong>。</li>
+<li><strong>是否剥削？</strong> 这取决于视角：
+<ul>
+<li><strong>从厂商视角</strong>：它锁定了用户的终身现金流，创造了极其稳定的营收模式，并将电池衰减的风险从用户身上转移到了自己身上（通过换电体系消化）。</li>
+<li><strong>从用户视角</strong>：对于计划车辆持有时间<strong>超过5-6年</strong>的用户来说，总支出很可能超过“买断电池+车贷”的总和，进入“纯付费期”，感觉上确实像在“为空气付费”。但对于计划<strong>3-4年就换车</strong>的用户，BaaS<strong>降低了首付和月供</strong>，卖车时也无需操心电池残值，反而可能是更经济的选择。</li>
+</ul></li>
+<li><strong>结论</strong>：它不能被简单地定义为“剥削”，但它是一种<strong>对用户车辆持有习惯进行筛选的商业模式</strong>。它更有利于短期持有者，而对长期持有者不利。它的“陷阱”不在于模式本身，而在于<strong>销售过程中是否被充分告知长期持有的财务后果</strong>，以及用户是否对自己未来的用车计划有清晰认知。</li>
+</ul>
+<h3 id="关于经济负担与普通金融方案的比较">4.
+关于经济负担与普通金融方案的比较</h3>
+<p>您说的没错，任何分期都是“用未来的钱贴补现在”。BaaS的真正特点在于：</p>
+<ul>
+<li><strong>无上限VS有上限</strong>：普通车贷有明确的还款截止日，总成本封顶。BaaS的总成本是<strong>开放式的</strong>，取决于你持有这辆车多久。</li>
+<li><strong>风险转移</strong>：车贷用户自己承担电池贬值和技术落后的风险。BaaS用户通过支付永续租金，将这部分风险转移给了蔚来。</li>
+<li><strong>所以，它不是“不如”普通金融方案，而是“完全不同”的方案</strong>。它更适合那些：
+<ol type="1">
+<li><strong>极度重视前期现金流</strong>（首付越低越好）。</li>
+<li><strong>确信自己不会长期持有车辆</strong>（比如3年必换车）。</li>
+<li><strong>极度厌恶持有贬值资产的风险</strong>。</li>
+</ol></li>
+</ul>
+<p>对于打算一辆车开8-10年的用户，这几乎注定是更昂贵的选择。</p>
+<h3 id="总结与最终回答">总结与最终回答</h3>
+<p><strong>您最核心的洞察是正确的：真正有价值的是“换电”这个服务，而不是“租电”这个产权模式。</strong></p>
+<ul>
+<li><strong>BaaS的本质</strong>：它是一个基于电池特殊性的、<strong>将金融产品与服务订阅深度融合</strong>的创新方案。它用“永续租金”为代价，为用户提供“低门槛准入”和“风险转移”，为厂商提供“持续现金流”和“资产控制权”。</li>
+<li><strong>如何选择</strong>：对于一个理性的消费者，决策逻辑应该是：
+<ol type="1">
+<li>我是否想要<strong>换电</strong>的体验？（如果是，再考虑下一步）</li>
+<li>我计划持有这辆车多久？</li>
+<li>基于我的持有期，用计算器精确算出<strong>BaaS总成本</strong> vs
+<strong>“买断+车贷”总成本</strong>。</li>
+<li>我更看重<strong>初始投入的降低</strong>，还是<strong>长期总成本的封顶</strong>？</li>
+</ol></li>
+</ul>
+<p>您的质疑迫使我们必须剥开宣传的外衣，从财务和商业本质上看待BaaS。它绝非一个对所有人都友好的方案，而是一个特性鲜明、优缺点极致、需要消费者用计算器和清醒头脑去对待的选择。</p>
+<blockquote>
+<p>所以这个模式的宣传通过层层包装, 使得我在初接触这个概念的时候,
+是下意识以为你不为电池付费, 只为使用的电量付费的. 结果完全不是这么回事,
+就是一个金融产品, 这个不被质疑是不可能的. 换句话说, 不经过这么反复质疑,
+普通消费者是根本意识不到购买的是什么,
+只知道"<strong>"租电比买断便宜8万块</strong>",
+"<strong>不用担心电池衰减</strong>", 这些对厂商最有利的几个概念了</p>
+</blockquote>
+<p>您这个总结，完全正确，而且点出了几乎所有消费者在初次接触BaaS时最核心的困惑和最终的“恍然大悟”。</p>
+<p><strong>是的，您的感觉完全没错。</strong></p>
+<p>这个模式的宣传，通过巧妙地捆绑“换电服务”和“电池产权”，确实很容易让消费者产生一个美丽的误解：<strong>我付的钱像是在付“电费”或“换电服务费”</strong>。</p>
+<p>而它的本质，被您一言道破：<strong>它就是一个剥离了电池资产的、特殊的金融产品。</strong></p>
+<p>让我们把这个包装拆解得更彻底一些：</p>
+<h3 id="不为电池付费只为电量付费-这是一个经典的认知偏差">1.
+“不为电池付费，只为电量付费” —— 这是一个经典的认知偏差</h3>
+<ul>
+<li>您想象中的模式：像手机流量包，用了多少G，付多少钱。电池是基础设施，电是商品。</li>
+<li>实际上的模式：<strong>你一直在为那块具体的电池资产付费（租金），同时还要为你消耗的电能（服务费）付费。</strong>
+月租是“资产使用费”，换电时按度收取的电费是“能源费”。</li>
+<li>这就像：你以为你租了个房子，只付水电煤费，结果发现每个月还要交一笔不小的“建筑本身”的折旧费。</li>
+</ul>
+<h3 id="便宜x万-最有效也最危险的钩子">2. “便宜X万” ——
+最有效也最危险的钩子</h3>
+<p>这个宣传语精准地击中了消费者“降低购车门槛”的痛点，但它刻意模糊了“总拥有成本”的概念。</p>
+<ul>
+<li><strong>它只对比了“首付”</strong>，却没有用同样醒目的方式告诉你，这省下的X万，需要你用未来<strong>永无止境的月供</strong>来偿还。</li>
+<li>对于一个打算长期用车的用户来说，这个“便宜”是虚假的。它只是把成本从“前期”转移到了“后期”，并且后期没有上限。</li>
+</ul>
+<h3 id="不用担心电池衰减-用换电的好处来为baas贴金">3. “不用担心电池衰减”
+—— 用换电的好处来为BaaS贴金</h3>
+<p>正如我们上次讨论的，这是<strong>最大的宣传技巧</strong>。</p>
+<ul>
+<li><strong>解决电池衰减问题的，是“换电”这个服务体系，而不是“BaaS”这个产权模式。</strong></li>
+<li>一个买断电池的车主，同样享受换电，同样不用担心电池衰减。他把车开到换电站，一块健康的新电池就换上了。</li>
+<li>BaaS方案只是让你<strong>在财务上选择了不拥有这块电池</strong>，但“电池健康”的保障，是所有换电用户的共同福利。宣传中将二者捆绑，让BaaS看起来多了一个它本不独有的巨大优势。</li>
+</ul>
+<h3
+id="所以为什么这种模式需要被反复质疑">所以，为什么这种模式需要被反复质疑？</h3>
+<p>因为它的<strong>复杂性</strong>远超一个简单的汽车贷款或租赁协议。它涉及：</p>
+<ol type="1">
+<li><strong>金融学</strong>：理解现值、终值、长期持有成本。</li>
+<li><strong>资产管理</strong>：理解资产贬值、残值计算。</li>
+<li><strong>服务与产权的剥离</strong>：理解你买的到底是什么（车身产权+电池订阅服务）。</li>
+<li><strong>逻辑混淆</strong>：理解厂商如何巧妙地用“换电”和“电池升级”来为<code>BaaS</code>贴金。</li>
+</ol>
+<p>要求一个普通消费者在购车时瞬间想明白所有这些，是不现实的。他们最直观的感受就是：“首付立马少了七八万，每个月付一千多，电池坏了还不找我”，这听起来太划算了。</p>
+<p><strong>您的质疑过程，恰恰是一个理性消费者应该完成的“祛魅”过程：</strong></p>
+<ul>
+<li><strong>第一步（初次印象）</strong>：哇，车价立减X万！超值！</li>
+<li><strong>第二步（产生疑惑）</strong>：等等，我要一直付钱？这跟分期付款有什么区别？不对，还好像永远还不完？</li>
+<li><strong>第三步（深入剖析）</strong>：原来所谓的保障是换电给的，不是租电独有。二手车残值还会大受影响。总账一算，长期持有血亏。</li>
+<li><strong>第四步（看清本质）</strong>：这就是一个金融产品设计。它用极低的首付吸引我上车，然后用永续月租锁定我，并把电池资产的所有风险和收益都归了厂商。</li>
+</ul>
+<p><strong>结论：</strong></p>
+<p>您不是少数派。越来越多的人正在经历和您一样的心路历程。这种质疑不仅是合理的，而且是必要的。它迫使厂商在<strong>宣传时必须更加透明</strong>，也教育消费者必须拿起计算器，算清<strong>长期总账</strong>，而不是仅仅被“首付省X万”冲昏头脑。</p>
+<p>最终，BaaS不是一个“坑”，但它是一个<strong>特性极其鲜明</strong>的产品：
+*
+<strong>对的人</strong>（计划短期持有、资金前期极度紧张、就是不想操心资产贬值）：它是好工具。
+*
+<strong>错的人</strong>（计划一辆车开很久、看重总成本、喜欢完全拥有）：它就是昂贵的陷阱。</p>
+<p>而这一切判断，都基于消费者是否能够像您一样，穿透层层包装，看清它的金融本质。</p>
+<hr />
+<p>好了，说说我的结论，在我同一些年轻人的沟通中，发现一个明显的规律，他们默认一辆车开几年就会换，这体现了年轻人的消费观和对未来经济的乐观，但恰恰这种短期持有方案简直就是为年轻人量身打造的，先不谈这么高的换手率是哪些人来接的盘，在这种消费和思维风潮没有逆转的情况下，蔚来还真是设计了一个好的产品。</p>
+<p>什么是好产品，就是你设计的产品是贴合你的目标客户的消费习惯的。</p>
+<p>对我来说，一辆车我可以开到它报废，持有越久，你的持久总成本越低，难怪我渐渐了解蔚来BaaS（其实当前的模式并不能叫BaaS，谁叫它率先抢了这个概念呢）的本质后，有一种本能的抗拒，它根本就不是为长期持有设计的，只是没有销售会这么跟你说罢了。当然，其实销售自己也不明白这些，只是把培训的话术反复念出来罢了。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/categories/screen">Screen</a></li>
+        
+          <li><a href="/categories/image">Image</a></li>
+        
+          <li><a href="/categories/music">Music</a></li>
+        
+          <li><a href="/categories/thoughts">Emotion</a></li>
+        
+          <li><a href="/categories/default">Mess</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%82%A8%E7%9A%84%E7%90%86%E8%A7%A3%E9%83%A8%E5%88%86%E6%AD%A3%E7%A1%AE"><span class="toc-number">1.</span> <span class="toc-text">首先，您的理解部分正确：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%86%E6%98%AF%E6%82%A8%E7%9A%84%E7%B1%BB%E6%AF%94%E5%92%8C%E8%94%9A%E6%9D%A5%E7%A7%9F%E7%94%B5%E6%96%B9%E6%A1%88%E6%9C%89%E5%87%A0%E4%B8%AA%E6%9C%AC%E8%B4%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">但是，您的类比和蔚来租电方案有几个本质的区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E4%BB%A5%E8%BF%99%E4%B8%AA%E4%B8%9A%E5%8A%A1%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">3.</span> <span class="toc-text">所以，这个业务的本质是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-number">4.</span> <span class="toc-text">总结一下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%A5%BD%E5%A4%84%E6%98%AF%E6%8D%A2%E7%94%B5%E6%A8%A1%E5%BC%8F%E5%B8%A6%E6%9D%A5%E7%9A%84%E8%80%8C%E9%9D%9Ebaas%E7%8B%AC%E4%BA%AB"><span class="toc-number">5.</span> <span class="toc-text">1.
+关于“好处”是换电模式带来的，而非BaaS独享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%B8%82%E5%9C%BA%E5%AE%9E%E8%B7%B5%E4%B8%AD%E7%9A%84%E6%AE%8B%E5%80%BC%E4%B8%8E%E5%8F%8C%E9%87%8D%E4%BB%98%E8%B4%B9%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">2.
+关于市场实践中的残值与双重付费问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E7%A7%9F%E8%B5%81%E7%9A%84%E5%90%88%E7%90%86%E6%80%A7%E4%B8%8E%E5%89%A5%E5%89%8A%E6%80%A7%E8%B4%A8%E7%96%91"><span class="toc-number">7.</span> <span class="toc-text">3.
+关于“永久租赁”的合理性与剥削性质疑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BB%8F%E6%B5%8E%E8%B4%9F%E6%8B%85%E4%B8%8E%E6%99%AE%E9%80%9A%E9%87%91%E8%9E%8D%E6%96%B9%E6%A1%88%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">8.</span> <span class="toc-text">4.
+关于经济负担与普通金融方案的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E6%9C%80%E7%BB%88%E5%9B%9E%E7%AD%94"><span class="toc-number">9.</span> <span class="toc-text">总结与最终回答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%B8%BA%E7%94%B5%E6%B1%A0%E4%BB%98%E8%B4%B9%E5%8F%AA%E4%B8%BA%E7%94%B5%E9%87%8F%E4%BB%98%E8%B4%B9-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%BB%8F%E5%85%B8%E7%9A%84%E8%AE%A4%E7%9F%A5%E5%81%8F%E5%B7%AE"><span class="toc-number">10.</span> <span class="toc-text">1.
+“不为电池付费，只为电量付费” —— 这是一个经典的认知偏差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%BF%E5%AE%9Cx%E4%B8%87-%E6%9C%80%E6%9C%89%E6%95%88%E4%B9%9F%E6%9C%80%E5%8D%B1%E9%99%A9%E7%9A%84%E9%92%A9%E5%AD%90"><span class="toc-number">11.</span> <span class="toc-text">2. “便宜X万” ——
+最有效也最危险的钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%94%A8%E6%8B%85%E5%BF%83%E7%94%B5%E6%B1%A0%E8%A1%B0%E5%87%8F-%E7%94%A8%E6%8D%A2%E7%94%B5%E7%9A%84%E5%A5%BD%E5%A4%84%E6%9D%A5%E4%B8%BAbaas%E8%B4%B4%E9%87%91"><span class="toc-number">12.</span> <span class="toc-text">3. “不用担心电池衰减”
+—— 用换电的好处来为BaaS贴金</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E4%BB%A5%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E7%A7%8D%E6%A8%A1%E5%BC%8F%E9%9C%80%E8%A6%81%E8%A2%AB%E5%8F%8D%E5%A4%8D%E8%B4%A8%E7%96%91"><span class="toc-number">13.</span> <span class="toc-text">所以，为什么这种模式需要被反复质疑？</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&text=蔚来BaaS电池租赁模式解析"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&is_video=false&description=蔚来BaaS电池租赁模式解析"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=蔚来BaaS电池租赁模式解析&body=Check out this article: https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&title=蔚来BaaS电池租赁模式解析"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&name=蔚来BaaS电池租赁模式解析&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://wzy.one/2026/03/05/%E8%94%9A%E6%9D%A5BaaS%E7%94%B5%E6%B1%A0%E7%A7%9F%E8%B5%81%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/&t=蔚来BaaS电池租赁模式解析"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2004-2026
+    walker
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/categories/screen">Screen</a></li><!--
+     --><!--
+       --><li><a href="/categories/image">Image</a></li><!--
+     --><!--
+       --><li><a href="/categories/music">Music</a></li><!--
+     --><!--
+       --><li><a href="/categories/thoughts">Emotion</a></li><!--
+     --><!--
+       --><li><a href="/categories/default">Mess</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
