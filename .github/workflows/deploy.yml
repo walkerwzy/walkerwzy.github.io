@@ -35,9 +35,9 @@ jobs:
       - name: Generate Static Files
         run: npx hexo generate
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: ./public
-          publish_branch: master
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 95ff672e4bfa649f80840175f2de971f
+          command: pages deploy ./public --project-name=walkerwzy-github-io
