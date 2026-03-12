@@ -13,16 +13,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
-          ref: source
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
           persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install pandoc
@@ -41,4 +42,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 95ff672e4bfa649f80840175f2de971f
-          command: pages deploy ./public --project-name=walkerwzy-github-io
+          command: pages deploy ./public --project-name=walkerwzy-github-io --commit-dirty=true --branch=${{ github.ref_name }}
